@@ -1,0 +1,1 @@
+# EMF-ClassDiagram-Example
