@@ -69,7 +69,8 @@
 	<classpathentry kind="lib" path="jars/uml/org.eclipse.uml2.uml.profile.standard_1.0.100.v20150906-1225.jar"/>
 	<classpathentry kind="lib" path="jars/uml/org.eclipse.uml2.uml.resources_5.1.0.v20150906-1225.jar"/>
 	<classpathentry kind="lib" path="jars/uml/org.eclipse.uml2.uml.validation_5.0.0.v20150906-1225.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.uml2.uml_3.1.2.v201010261927.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.uml2.common_1.7.0.v20130114-0902.jar"/>
+	<classpathentry kind="lib" path="jars/uml/org.eclipse.uml2.common_2.1.0.v20150906-1225.jar"/>
+	<classpathentry kind="lib" path="jars/uml/org.eclipse.uml2.types_2.0.0.v20150906-1225.jar"/>
+	<classpathentry kind="lib" path="jars/uml/org.eclipse.uml2.uml_5.1.0.v20150906-1225.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

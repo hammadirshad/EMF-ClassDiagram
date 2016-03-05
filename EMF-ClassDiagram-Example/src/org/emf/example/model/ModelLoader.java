@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -49,11 +50,16 @@ public class ModelLoader {
 		String relPath = null;
 		try {
 			relPath = new File(".").getCanonicalPath();
+			System.out.println(System.getProperty("user.dir"));
 		} catch (IOException e1) {
 			e1.printStackTrace();
+		
+			
 		}
+
 		URIConverter.URI_MAP.put(URI.createURI("platform:/plugin/org.eclipse.uml2.uml/"),
-				URI.createURI("jar:file:" + relPath + "/lib/org.eclipse.uml2.uml_3.1.2.v201010261927.jar!/"));
+				URI.createURI("jar:file:" + relPath + "/jars/uml/org.eclipse.uml2.uml_5.1.0.v20150906-1225.jar!/"));
+
 		Resource resource = null;
 
 		Map<String, Object> options = new HashMap<String, Object>();
@@ -65,6 +71,10 @@ public class ModelLoader {
 		resource.load(options);
 
 		Package _package = null;
+
+		for (EObject ojEObject : resource.getContents()) {
+			System.out.println(ojEObject.getClass());
+		}
 
 		_package = (Model) EcoreUtil.getObjectByType(resource.getContents(), UMLPackage.Literals.MODEL);
 
@@ -106,8 +116,11 @@ public class ModelLoader {
 		packageRegistry.put(Ecore2XMLPackage.eNS_URI, Ecore2XMLPackage.eINSTANCE);
 		packageRegistry.put(UMLPackage.eNS_URI, UMLPackage.eINSTANCE);
 		packageRegistry.put(UML212UMLResource.UML_METAMODEL_NS_URI, UMLPackage.eINSTANCE);
+	
 		packageRegistry.put("http://www.eclipse.org/uml2/2.0.0/UML", UMLPackage.eINSTANCE);
-
+		packageRegistry.put("http://www.eclipse.org/uml2/3.0.0/UML", UMLPackage.eINSTANCE);
+		packageRegistry.put("http://www.eclipse.org/uml2/5.0.0/UML", UMLPackage.eINSTANCE);
+	
 	}
 
 	@SuppressWarnings("unused")
