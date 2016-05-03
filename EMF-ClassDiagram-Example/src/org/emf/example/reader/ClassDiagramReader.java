@@ -9,7 +9,10 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Enumeration;
+import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.Parameter;
@@ -20,30 +23,33 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.internal.impl.ClassImpl;
 import org.eclipse.uml2.uml.internal.impl.EnumerationImpl;
 import org.eclipse.uml2.uml.internal.impl.InterfaceImpl;
+import org.eclipse.uml2.uml.internal.impl.OpaqueExpressionImpl;
 import org.eclipse.uml2.uml.internal.impl.PrimitiveTypeImpl;
 import org.emf.example.dataobject.ClassAttribute;
 import org.emf.example.dataobject.ClassDiagram;
 import org.emf.example.dataobject.ClassMethod;
-import org.emf.example.dataobject.ClassRelation;
+import org.emf.example.dataobject.ClassRelations;
 import org.emf.example.dataobject.ClassStructure;
+import org.emf.example.dataobject.EnumStructure;
+import org.emf.example.dataobject.MethodReturn;
 import org.emf.example.model.ModelLoader;
 
 public class ClassDiagramReader implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private static ClassDiagram refModelDetail;
-	private ModelLoader umlModel = null;
+	private ClassDiagram refModelDetail;
+	private ModelLoader loader;
 
 	public ClassDiagramReader() {
 		refModelDetail = new ClassDiagram();
-		umlModel = new ModelLoader();
+		loader = new ModelLoader();
 	}
 
-	public ClassDiagram getRefModelDetails(File model) throws Exception {
-
-		Package _package = umlModel.loadModel(model);
-		if (_package != null) {
+	public ClassDiagram getRefModelDetails(File file) throws Exception {
+		Package _package = loader.loadModel(file);
+		if (file != null) {
 			EList<PackageableElement> packageableElements = _package.getPackagedElements();
-			readPackage(packageableElements);
+			String packageName = file.getName() != null ? file.getName() : "";
+			readPackage(packageableElements, packageName);
 		} else {
 			System.err.println("Package is null");
 		}
@@ -51,58 +57,92 @@ public class ClassDiagramReader implements Serializable {
 		return refModelDetail;
 	}
 
-	private void readPackage(EList<PackageableElement> packageableElements) {
+	private void readPackage(EList<PackageableElement> packageableElements, String packageName) {
 
 		for (PackageableElement element : packageableElements) {
 
 			if (element.eClass() == UMLPackage.Literals.ASSOCIATION) {
 				refModelDetail.addRelationship(readAssociation(element));
-			} else if (element.eClass() == UMLPackage.Literals.CLASS) {
-				refModelDetail.addClass(readClass(element, refModelDetail.getRelationships()));
+			}
+
+			if (element.eClass() == UMLPackage.Literals.CLASS) {
+				refModelDetail.addClass(readClass(element, packageName));
+			} else if (element.eClass() == UMLPackage.Literals.ENUMERATION) {
+
+				refModelDetail.addEnumeration(readEnumeration(element, packageName));
 			} else if (element.eClass() == UMLPackage.Literals.PACKAGE) {
 				Package _package = (Package) element;
-				readPackage(_package.getPackagedElements());
+
+				String newPackageName = _package.getName() != null
+						? (packageName.equals("") ? _package.getName() : packageName + "." + _package.getName())
+						: packageName;
+				readPackage(_package.getPackagedElements(), newPackageName);
 
 			}
 		}
 	}
 
-	private ClassStructure readClass(Element element, ArrayList<ClassRelation> allRelationships) {
+	private EnumStructure readEnumeration(PackageableElement element, String packageName) {
 
-		ClassStructure structure = new ClassStructure();
-
-		Class _class = (Class) element;
-		structure.setAbstract(_class.isAbstract());
-		structure.setFinal(_class.isLeaf());
-		structure.setClassName(_class.getName());
-		structure.setVisibility(_class.getVisibility().toString());
-
-		structure.setClassAttributes(readAttributes(_class));
-		structure.setClassMethods(readClassOperations(_class));
-		structure.setClassRelationships(readClassRelations(_class, allRelationships));
+		EnumStructure structure = new EnumStructure();
+		Enumeration enumeration = (Enumeration) element;
+		structure.setName(enumeration.getName());
+		structure.setPackage(packageName);
+		for (EnumerationLiteral literal : enumeration.getOwnedLiterals()) {
+			structure.addLiteral(literal.getName());
+		}
 
 		return structure;
 	}
 
-	private ArrayList<ClassRelation> readClassRelations(Class _class, ArrayList<ClassRelation> allRelationships) {
-		ArrayList<ClassRelation> list = new ArrayList<ClassRelation>();
+	private ClassStructure readClass(Element element, String packageName) {
+		ClassStructure structure = new ClassStructure();
+		Class _class = (Class) element;
+		// System.out.println(_class.getName());
+		for (Constraint constraint : _class.getOwnedRules()) {
+			if (constraint.getSpecification() instanceof OpaqueExpressionImpl) {
+				OpaqueExpressionImpl expressionImpl = (OpaqueExpressionImpl) constraint.getSpecification();
+				for (String body : expressionImpl.getBodies()) {
+					// System.out.println(body);
+				}
+			}
+
+		}
+
+		structure.setAbstract(_class.isAbstract());
+		structure.setFinal(_class.isLeaf());
+		structure.setClassName(_class.getName());
+		structure.setVisibility(_class.getVisibility().toString());
+		structure.setClassPackage(packageName);
+		structure.setClassAttributes(readAttribute(_class));
+		structure.setClassMethods(readClassOperations(_class));
+		structure.setClassRelationships(readClassRelations(_class, refModelDetail.getRelationships()));
+
+		return structure;
+	}
+
+	private ArrayList<ClassRelations> readClassRelations(Class _class, ArrayList<ClassRelations> allRelationships) {
+		ArrayList<ClassRelations> list = new ArrayList<ClassRelations>();
 		EList<Relationship> classRelationships = _class.getRelationships();
 		for (Relationship classRelation : classRelationships) {
 			for (Element elements : classRelation.getRelatedElements()) {
-				ClassImpl relationName = (ClassImpl) elements;
-				if (!relationName.getName().equals(_class.getName())) {
+				if (elements instanceof Class) {
+					ClassImpl relationName = (ClassImpl) elements;
+					if (relationName.getName() != null && !relationName.getName().equals(_class.getName())) {
 
-					for (ClassRelation relation : allRelationships) {
+						for (ClassRelations relation : allRelationships) {
 
-						if (relation.getClass_1() != null && relation.getClass_2() != null)
-							if (relation.getClass_1().equals(_class.getName().toString())
-									&& relation.getClass_2().equals(relationName.getName().toString())) {
-								list.add(relation);
-							} else if (relation.getClass_1().equals(relationName.getName().toString())
-									&& relation.getClass_2().equals(_class.getName().toString())) {
-								list.add(relation);
+							if (relation.getClass_1() != null && relation.getClass_2() != null)
+								if (relation.getClass_1().equals(_class.getName().toString())
+										&& relation.getClass_2().equals(relationName.getName().toString())) {
+									list.add(relation);
+								} else if (relation.getClass_1().equals(relationName.getName().toString())
+										&& relation.getClass_2().equals(_class.getName().toString())) {
+									list.add(relation);
 
-							}
+								}
+						}
+
 					}
 
 				}
@@ -120,6 +160,7 @@ public class ClassDiagramReader implements Serializable {
 				ClassMethod operation = new ClassMethod();
 				operation.setMethodName(oper.getName());
 				operation.setMethodVisibility(oper.getVisibility().toString());
+				operation.setMethodReturnType(new MethodReturn());
 
 				EList<Parameter> parameters = oper.getOwnedParameters();
 				if (!parameters.isEmpty()) {
@@ -137,9 +178,20 @@ public class ClassDiagramReader implements Serializable {
 							PrimitiveTypeImpl prim = (PrimitiveTypeImpl) (parameter.getType());
 							if (returnType) {
 								if (prim.getName() == null || prim.getName().equals("")) {
-									operation.setMethodReturnType(prim.eProxyURI().fragment());
+									MethodReturn methodReturn = new MethodReturn();
+									methodReturn.setAttributeType(prim.eProxyURI().fragment());
+									if (parameter.getUpper() == -1) {
+										methodReturn.setCollection(true);
+									}
+									operation.setMethodReturnType(methodReturn);
 								} else {
-									operation.setMethodReturnType(prim.getName());
+									MethodReturn methodReturn = new MethodReturn();
+									methodReturn.setAttributeType(prim.getName());
+									if (parameter.getUpper() == -1) {
+										methodReturn.setCollection(true);
+									}
+									operation.setMethodReturnType(methodReturn);
+
 								}
 
 							} else {
@@ -147,7 +199,13 @@ public class ClassDiagramReader implements Serializable {
 
 								if (prim.getName() == null || prim.getName().equals("")) {
 									attr.setAttributeType(prim.eProxyURI().fragment());
+									if (parameter.getUpper() == -1) {
+										attr.setCollection(true);
+									}
 								} else {
+									if (parameter.getUpper() == -1) {
+										attr.setCollection(true);
+									}
 									attr.setAttributeType(prim.getName());
 								}
 								operation.getMethodParameters().add(attr);
@@ -157,19 +215,35 @@ public class ClassDiagramReader implements Serializable {
 							EnumerationImpl impl = (EnumerationImpl) (parameter.getType());
 
 							if (returnType) {
-								operation.setMethodReturnType(impl.getName());
+								MethodReturn methodReturn = new MethodReturn();
+								methodReturn.setAttributeType(impl.getName());
+								if (parameter.getUpper() == -1) {
+									methodReturn.setCollection(true);
+								}
+								operation.setMethodReturnType(methodReturn);
+
 							} else {
 
 								attr.setAttributeName(parameter.getName());
 								attr.setAttributeVisibility(parameter.getVisibility().toString());
 								attr.setAttributeType(impl.getName());
+								if (parameter.getUpper() == -1) {
+									attr.setCollection(true);
+								}
 								operation.getMethodParameters().add(attr);
 							}
 
 						} else if (parameter.getType() instanceof org.eclipse.uml2.uml.internal.impl.ClassImpl) {
 							ClassImpl impl = (ClassImpl) (parameter.getType());
 							if (returnType) {
-								operation.setMethodReturnType(impl.getName());
+								MethodReturn methodReturn = new MethodReturn();
+								methodReturn.setAttributeType(impl.getName());
+								methodReturn.setClass(true);
+								if (parameter.getUpper() == -1) {
+									methodReturn.setCollection(true);
+								}
+								operation.setMethodReturnType(methodReturn);
+
 							} else {
 
 								attr.setAttributeName(parameter.getName());
@@ -218,7 +292,13 @@ public class ClassDiagramReader implements Serializable {
 							}
 
 							if (returnType) {
-								operation.setMethodReturnType(arrtibuteType);
+								MethodReturn methodReturn = new MethodReturn();
+								methodReturn.setAttributeType(arrtibuteType);
+								if (attr.isCollection()) {
+									methodReturn.setCollection(true);
+								}
+								operation.setMethodReturnType(methodReturn);
+
 							} else {
 								attr.setAttributeType(arrtibuteType);
 								attr.setAttributeName(parameter.getName().toString());
@@ -236,7 +316,7 @@ public class ClassDiagramReader implements Serializable {
 		return list;
 	}
 
-	private ArrayList<ClassAttribute> readAttributes(Class _class) {
+	private ArrayList<ClassAttribute> readAttribute(Class _class) {
 		ArrayList<ClassAttribute> list = new ArrayList<ClassAttribute>();
 		EList<Property> attributes = _class.getOwnedAttributes();
 		if (!attributes.isEmpty()) {
@@ -320,9 +400,9 @@ public class ClassDiagramReader implements Serializable {
 		return list;
 	}
 
-	private ClassRelation readAssociation(Element element) {
+	private ClassRelations readAssociation(Element element) {
 		Association association = (Association) element;
-		ClassRelation structure = new ClassRelation();
+		ClassRelations structure = new ClassRelations();
 		boolean first = true;
 		for (Property end : association.getMemberEnds()) {
 			if (end.getType() instanceof org.eclipse.uml2.uml.Class) {
@@ -355,6 +435,13 @@ public class ClassDiagramReader implements Serializable {
 					structure.setClass_2(end.getType().getName());
 					structure.setRole_Name_2(end.getName().toString());
 					structure.setNavigable_2(end.isNavigable());
+					org.eclipse.uml2.uml.LiteralUnlimitedNatural u = (org.eclipse.uml2.uml.LiteralUnlimitedNatural) end
+							.getUpperValue();
+					if (u != null) {
+						structure.setMultipcity_Uper_2(u.getValue());
+					} else {
+						structure.setMultipcity_Uper_2(0);
+					}
 
 					if (end instanceof org.eclipse.uml2.uml.LiteralUnlimitedNatural) {
 						org.eclipse.uml2.uml.LiteralUnlimitedNatural l = (org.eclipse.uml2.uml.LiteralUnlimitedNatural) end
@@ -362,12 +449,6 @@ public class ClassDiagramReader implements Serializable {
 						structure.setMultipcity_Lower_2(l.getValue());
 					} else {
 						structure.setMultipcity_Lower_2(0);
-					}
-
-					org.eclipse.uml2.uml.LiteralUnlimitedNatural upper = (org.eclipse.uml2.uml.LiteralUnlimitedNatural) end
-							.getUpperValue();
-					if (upper != null) {
-						structure.setMultipcity_Uper_2(upper.getValue());
 					}
 
 					return structure;

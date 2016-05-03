@@ -1,6 +1,6 @@
 package org.emf.example.dataobject;
 
-public class ClassRelation {
+public class ClassRelations {
 
 	private String Class_1;
 	private String Class_2;

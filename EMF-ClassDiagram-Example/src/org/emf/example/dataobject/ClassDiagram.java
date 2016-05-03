@@ -1,38 +1,55 @@
 package org.emf.example.dataobject;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ClassDiagram {
-	ArrayList<ClassStructure> classes = null;
-	ArrayList<ClassRelation> relationships = null;
+public class ClassDiagram implements Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public ClassDiagram() {
-		classes = new ArrayList<ClassStructure>();
-		relationships = new ArrayList<ClassRelation>();
-	}
+    ArrayList<ClassStructure> classes = null;
+    ArrayList<EnumStructure> enumerations = null;
+    ArrayList<ClassRelations> relationships = null;
 
-	public ArrayList<ClassStructure> getClasses() {
-		return classes;
-	}
+    public ClassDiagram() {
+        classes = new ArrayList<ClassStructure>();
+        enumerations = new ArrayList<EnumStructure>();
+        relationships = new ArrayList<ClassRelations>();
+    }
 
-	public void setClasses(ArrayList<ClassStructure> classes) {
-		this.classes = classes;
-	}
+    public ArrayList<ClassStructure> getClasses() {
+        return classes;
+    }
 
-	public void addClass(ClassStructure _class) {
-		this.classes.add(_class);
-	}
+    public void setClasses(ArrayList<ClassStructure> classes) {
+        this.classes = classes;
+    }
 
-	public ArrayList<ClassRelation> getRelationships() {
-		return relationships;
-	}
+    public void addClass(ClassStructure _class) {
+        this.classes.add(_class);
+    }
 
-	public void setRelationships(ArrayList<ClassRelation> relationships) {
-		this.relationships = relationships;
-	}
+    public ArrayList<EnumStructure> getEnumerations() {
+        return enumerations;
+    }
 
-	public void addRelationship(ClassRelation relationship) {
-		this.relationships.add(relationship);
-	}
+    public void setEnumerations(ArrayList<EnumStructure> enumerations) {
+        this.enumerations = enumerations;
+    }
+
+    public void addEnumeration(EnumStructure enumeration) {
+        this.enumerations.add(enumeration);
+    }
+
+    public ArrayList<ClassRelations> getRelationships() {
+        return relationships;
+    }
+
+    public void setRelationships(ArrayList<ClassRelations> relationships) {
+        this.relationships = relationships;
+    }
+
+    public void addRelationship(ClassRelations relationship) {
+        this.relationships.add(relationship);
+    }
 
 }

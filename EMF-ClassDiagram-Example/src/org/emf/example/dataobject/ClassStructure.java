@@ -1,151 +1,156 @@
 package org.emf.example.dataobject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ClassStructure {
 
-	private String _package;
-	private ArrayList<String> imports = new ArrayList<String>();
-	private String className;
-	private String classVisibility;
-	private String classType;
-	private boolean isAbstract;
-	private boolean isFinal;
-	private ArrayList<ClassAttribute> classAttributes = new ArrayList<ClassAttribute>();
-	private ArrayList<ClassMethod> classMethods = new ArrayList<ClassMethod>();
-	private ArrayList<ClassRelation> classRelationships = new ArrayList<ClassRelation>();
+    private String classPackage;
+    private ArrayList<String> imports = new ArrayList<String>();
+    private String className;
+    private String classVisibility;
+    private String classType;
+    private List<String> rules = new ArrayList<String>();
+    private boolean isAbstract;
+    private boolean isFinal;
+    private ArrayList<ClassAttribute> classAttributes = new ArrayList<ClassAttribute>();
+    private ArrayList<ClassMethod> classMethods = new ArrayList<ClassMethod>();
+    private ArrayList<ClassRelations> classRelationships = new ArrayList<ClassRelations>();
 
-	public String getClassName() {
-		return className;
-	}
+    public String getClassName() {
+        return className;
+    }
 
-	public void setClassName(String className) {
-		this.className = className;
-	}
+    public void setClassName(String className) {
+        this.className = className;
+    }
 
-	public String getClassVisibility() {
-		return this.classVisibility;
-	}
+    public String getClassVisibility() {
+        return this.classVisibility;
+    }
 
-	public void setClassAccessibility(String classVisibility) {
-		this.classVisibility = classVisibility;
-	}
+    public void setClassVisibility(String classVisibility) {
+        this.classVisibility = classVisibility;
+    }
 
-	public ArrayList<ClassAttribute> getClassAttributes() {
-		return this.classAttributes;
-	}
+    public void setClassAccessibility(String classVisibility) {
+        this.classVisibility = classVisibility;
+    }
 
-	public void setClassAttributes(ArrayList<ClassAttribute> classAttributes) {
-		this.classAttributes = classAttributes;
-	}
+    public ArrayList<ClassAttribute> getClassAttributes() {
+        return this.classAttributes;
+    }
 
-	public ArrayList<ClassMethod> getClassMethods() {
-		return classMethods;
-	}
+    public void setClassAttributes(ArrayList<ClassAttribute> classAttributes) {
+        this.classAttributes = classAttributes;
+    }
 
-	public void setClassMethods(ArrayList<ClassMethod> classMethods) {
-		this.classMethods = classMethods;
-	}
+    public ArrayList<ClassMethod> getClassMethods() {
+        return classMethods;
+    }
 
-	public void addClassMethods(ClassMethod classMethod) {
-		this.classMethods.add(classMethod);
-	}
+    public void setClassMethods(ArrayList<ClassMethod> classMethods) {
+        this.classMethods = classMethods;
+    }
 
-	public String getType() {
-		return classType;
-	}
+    public void addClassMethods(ClassMethod classMethod) {
+        this.classMethods.add(classMethod);
+    }
 
-	public void setType(String type) {
-		classType = type;
-	}
+    public String getType() {
+        return classType;
+    }
 
-	public String getVisibility() {
-		return classVisibility;
-	}
+    public void setType(String type) {
+        classType = type;
+    }
 
-	public void setVisibility(String visibility) {
-		classVisibility = visibility;
-	}
+    public String getVisibility() {
+        return classVisibility;
+    }
 
-	public boolean isAbstract() {
-		return isAbstract;
-	}
+    public void setVisibility(String visibility) {
+        classVisibility = visibility;
+    }
 
-	public void setAbstract(boolean abstract1) {
-		isAbstract = abstract1;
-	}
+    public boolean isAbstract() {
+        return isAbstract;
+    }
 
-	public boolean isFinal() {
-		return isFinal;
-	}
+    public void setAbstract(boolean abstract1) {
+        isAbstract = abstract1;
+    }
 
-	public void setFinal(boolean final1) {
-		isFinal = final1;
-	}
+    public boolean isFinal() {
+        return isFinal;
+    }
 
-	public ArrayList<ClassRelation> getRelationships() {
-		return classRelationships;
-	}
+    public void setFinal(boolean final1) {
+        isFinal = final1;
+    }
 
-	public void setRelationships(ArrayList<ClassRelation> relationships) {
-		classRelationships = relationships;
-	}
+    public ArrayList<ClassRelations> getRelationships() {
+        return classRelationships;
+    }
 
-	public void addRelationship(ClassRelation relationship) {
-		classRelationships.add(relationship);
-	}
+    public void setRelationships(ArrayList<ClassRelations> relationships) {
+        classRelationships = relationships;
+    }
 
-	public String getPackage() {
-		return _package;
-	}
+    public void addRelationship(ClassRelations relationship) {
+        classRelationships.add(relationship);
+    }
 
-	public void setPackage(String _package) {
-		this._package = _package;
-	}
+    public String getClassPackage() {
+        return classPackage;
+    }
 
-	public String get_package() {
-		return _package;
-	}
+    public void setClassPackage(String classPackage) {
+        this.classPackage = classPackage;
+    }
 
-	public void set_package(String _package) {
-		this._package = _package;
-	}
+    public ArrayList<String> getImports() {
+        return imports;
+    }
 
-	public ArrayList<String> getImports() {
-		return imports;
-	}
+    public void setImports(ArrayList<String> imports) {
+        this.imports = imports;
+    }
 
-	public void setImports(ArrayList<String> imports) {
-		this.imports = imports;
-	}
+    public void addImport(String _import) {
+        this.imports.add(_import);
+    }
 
-	public void addImport(String _import) {
-		this.imports.add(_import);
-	}
+    public String getClassType() {
+        return classType;
+    }
 
-	public String getClassType() {
-		return classType;
-	}
+    public void setClassType(String classType) {
+        this.classType = classType;
+    }
 
-	public void setClassType(String classType) {
-		this.classType = classType;
-	}
+    public ArrayList<ClassRelations> getClassRelationships() {
+        return classRelationships;
+    }
 
-	public ArrayList<ClassRelation> getClassRelationships() {
-		return classRelationships;
-	}
+    public void setClassRelationships(
+            ArrayList<ClassRelations> classRelationships) {
+        this.classRelationships = classRelationships;
+    }
 
-	public void setClassRelationships(
-			ArrayList<ClassRelation> classRelationships) {
-		this.classRelationships = classRelationships;
-	}
+    public void addClassRelationship(ClassRelations classRelationship) {
+        this.classRelationships.add(classRelationship);
+    }
 
-	public void addClassRelationship(ClassRelation classRelationship) {
-		this.classRelationships.add(classRelationship);
-	}
+    public List<String> getRules() {
+        return rules;
+    }
 
-	public void setClassVisibility(String classVisibility) {
-		this.classVisibility = classVisibility;
-	}
+    public void setRules(List<String> rules) {
+        this.rules = rules;
+    }
 
+    public void addRules(String rule) {
+        this.rules.add(rule);
+    }
 }
