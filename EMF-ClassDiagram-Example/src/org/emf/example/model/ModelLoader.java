@@ -2,11 +2,13 @@ package org.emf.example.model;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -25,122 +27,159 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.resource.UML212UMLResource;
 import org.eclipse.uml2.uml.resource.UML22UMLResource;
 import org.eclipse.uml2.uml.resource.UMLResource;
+import org.eclipse.uml2.uml.util.UMLUtil;
+import org.emf.example.util.ConvertProperties;
 
 public class ModelLoader {
 
-	private static ResourceSet RESOURCE_SET = null;
+    private static ResourceSet RESOURCE_SET = null;
 
-	public ModelLoader() {
-		RESOURCE_SET = new ResourceSetImpl();
-		registerPackages(getResourceSet());
-		registerResourceFactories();
-	}
+    public ModelLoader() {
+        RESOURCE_SET = new ResourceSetImpl();
+        registerPackages(getResourceSet());
+        registerResourceFactories();
+    }
 
-	/*
-	 * This function converts input path to uri and return uri.
-	 */
-	public String getFileURI(String path) throws Exception {
-		File f = new File(path);
-		String uri = f.toURI().toString();
-		return uri;
-	}
+    /*
+     * This function converts input path to uri and return uri.
+     */
+    private String getFileURI(String path) throws Exception {
+        File f = new File(path);
+        String uri = f.toURI().toString();
+        return uri;
+    }
 
-	public Package loadModel(File file) throws Exception {
+    private Resource registerModel(File file) throws Exception {
 
-		String relPath = null;
-		try {
-			relPath = new File(".").getCanonicalPath();
-			System.out.println(System.getProperty("user.dir"));
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		
-			
-		}
+        String relPath = null;
+        try {
+            relPath = new File(".").getCanonicalPath();
+            System.out.println(System.getProperty("user.dir"));
+        } catch (IOException e1) {
+            e1.printStackTrace();
 
-		URIConverter.URI_MAP.put(URI.createURI("platform:/plugin/org.eclipse.uml2.uml/"),
-				URI.createURI("jar:file:" + relPath + "/jars/uml/org.eclipse.uml2.uml_5.1.0.v20150906-1225.jar!/"));
 
-		Resource resource = null;
+        }
 
-		Map<String, Object> options = new HashMap<String, Object>();
-		options.put(XMLResource.OPTION_EXTENDED_META_DATA, Boolean.TRUE);
-		options.put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
-		options.put(XMLResource.OPTION_ENCODING, "UTF-8");
+        URIConverter.URI_MAP.put(URI.createURI("platform:/plugin/org.eclipse.uml2.uml/"),
+                URI.createURI("jar:file:" + relPath + "/jars/uml/org.eclipse.uml2.uml_5.1.0.v20150906-1225.jar!/"));
 
-		resource = getResourceSet().createResource(URI.createFileURI(file.getCanonicalPath()));
-		resource.load(options);
+        Resource resource = null;
 
-		Package _package = null;
+        Map<String, Object> options = new HashMap<String, Object>();
+        options.put(XMLResource.OPTION_EXTENDED_META_DATA, Boolean.TRUE);
+        options.put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
+        options.put(XMLResource.OPTION_ENCODING, "UTF-8");
 
-		for (EObject ojEObject : resource.getContents()) {
-			System.out.println(ojEObject.getClass());
-		}
+        resource = getResourceSet().createResource(URI.createFileURI(file.getCanonicalPath()));
+        resource.load(options);
+        return resource;
+    }
 
-		_package = (Model) EcoreUtil.getObjectByType(resource.getContents(), UMLPackage.Literals.MODEL);
+    public Package loadModel(File file) throws Exception {
 
-		if (_package == null) {
-			_package = (Package) EcoreUtil.getObjectByType(resource.getContents(), UMLPackage.Literals.PACKAGE);
-		}
+        Resource resource = registerModel(file);
 
-		return _package;
+        Package _package = null;
 
-	}
+        for (EObject ojEObject : resource.getContents()) {
+            System.out.println(ojEObject.getClass());
+        }
 
-	@SuppressWarnings({ "rawtypes", "unchecked" })
-	private static void registerResourceFactories() {
-		Map extensionFactoryMap = Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap();
-		extensionFactoryMap.put(UMLResource.FILE_EXTENSION, UMLResource.Factory.INSTANCE);
+        _package = (Model) EcoreUtil.getObjectByType(resource.getContents(), UMLPackage.Literals.MODEL);
 
-		extensionFactoryMap.put(Ecore2XMLResource.FILE_EXTENSION, Ecore2XMLResource.Factory.INSTANCE);
-		extensionFactoryMap.put("ecore", new EcoreResourceFactoryImpl());
+        if (_package == null) {
+            _package = (Package) EcoreUtil.getObjectByType(resource.getContents(), UMLPackage.Literals.PACKAGE);
+        }
 
-		extensionFactoryMap.put(UML22UMLResource.FILE_EXTENSION, UML22UMLResource.Factory.INSTANCE);
-		extensionFactoryMap.put(UMLResource.FILE_EXTENSION, UML22UMLResource.Factory.INSTANCE);
-		extensionFactoryMap.put(UMLResource.FILE_EXTENSION, UML22UMLResource.Factory.INSTANCE);
+        if (_package == null) {
 
-		extensionFactoryMap.put("xml", UMLResource.Factory.INSTANCE);
 
-		extensionFactoryMap.put("xml", new XMLResourceFactoryImpl());
+            EPackage _package2 = (EPackage) EcoreUtil.getObjectByType(resource.getContents(),
+                    EcorePackage.Literals.EPACKAGE);
+            if (_package2 != null) {
+                Collection<Package> ecorePackages =
+                        UMLUtil.convertFromEcore(_package2, ConvertProperties.optionsToProcess());
 
-		extensionFactoryMap.put("xmi", UMLResource.Factory.INSTANCE);
-		extensionFactoryMap.put("xmi", new XMIResourceFactoryImpl());
+                if (ecorePackages != null && !ecorePackages.isEmpty()) {
+                    _package = (Package) ecorePackages.toArray()[0];
+                }
 
-		extensionFactoryMap.put("genmodel", new XMIResourceFactoryImpl());
 
-	}
+            }
+        }
+        return _package;
 
-	@SuppressWarnings({ "rawtypes", "unchecked" })
-	private static void registerPackages(ResourceSet resourceSet) {
-		Map packageRegistry = resourceSet.getPackageRegistry();
-		packageRegistry.put(EcorePackage.eNS_URI, EcorePackage.eINSTANCE);
-		packageRegistry.put(Ecore2XMLPackage.eNS_URI, Ecore2XMLPackage.eINSTANCE);
-		packageRegistry.put(UMLPackage.eNS_URI, UMLPackage.eINSTANCE);
-		packageRegistry.put(UML212UMLResource.UML_METAMODEL_NS_URI, UMLPackage.eINSTANCE);
-	
-		packageRegistry.put("http://www.eclipse.org/uml2/1.0.0/UML", UMLPackage.eINSTANCE);
-		packageRegistry.put("http://www.eclipse.org/uml2/2.0.0/UML", UMLPackage.eINSTANCE);
-		packageRegistry.put("http://www.eclipse.org/uml2/3.0.0/UML", UMLPackage.eINSTANCE);
-		packageRegistry.put("http://www.eclipse.org/uml2/4.0.0/UML", UMLPackage.eINSTANCE);
-		packageRegistry.put("http://www.eclipse.org/uml2/5.0.0/UML", UMLPackage.eINSTANCE);
-	
-	}
+    }
 
-	@SuppressWarnings("unused")
-	private void registerPathmaps(URI uri) {
-		URIConverter.URI_MAP.put(URI.createURI(UMLResource.LIBRARIES_PATHMAP),
-				uri.appendSegment("libraries").appendSegment(""));
-		URIConverter.URI_MAP.put(URI.createURI(UMLResource.METAMODELS_PATHMAP),
-				uri.appendSegment("metamodels").appendSegment(""));
-		URIConverter.URI_MAP.put(URI.createURI(UMLResource.PROFILES_PATHMAP),
-				uri.appendSegment("profiles").appendSegment(""));
-	}
+    public EPackage loadEcoreModel(File file) throws Exception {
 
-	public static ResourceSet getResourceSet() {
-		if (RESOURCE_SET == null) {
-			RESOURCE_SET = new ResourceSetImpl();
-			registerPackages(getResourceSet());
-			registerResourceFactories();
-		}
-		return RESOURCE_SET;
-	}
+        Resource resource = registerModel(file);
+
+        EPackage _package = null;
+
+        _package = (EPackage) EcoreUtil.getObjectByType(resource.getContents(),
+                EcorePackage.Literals.EPACKAGE);
+
+        return _package;
+
+    }
+
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    private static void registerResourceFactories() {
+        Map extensionFactoryMap = Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap();
+        extensionFactoryMap.put(UMLResource.FILE_EXTENSION, UMLResource.Factory.INSTANCE);
+
+        extensionFactoryMap.put(Ecore2XMLResource.FILE_EXTENSION, Ecore2XMLResource.Factory.INSTANCE);
+        extensionFactoryMap.put("ecore", new EcoreResourceFactoryImpl());
+
+        extensionFactoryMap.put(UML22UMLResource.FILE_EXTENSION, UML22UMLResource.Factory.INSTANCE);
+        extensionFactoryMap.put(UMLResource.FILE_EXTENSION, UML22UMLResource.Factory.INSTANCE);
+        extensionFactoryMap.put(UMLResource.FILE_EXTENSION, UML22UMLResource.Factory.INSTANCE);
+
+        extensionFactoryMap.put("xml", UMLResource.Factory.INSTANCE);
+
+        extensionFactoryMap.put("xml", new XMLResourceFactoryImpl());
+
+        extensionFactoryMap.put("xmi", UMLResource.Factory.INSTANCE);
+        extensionFactoryMap.put("xmi", new XMIResourceFactoryImpl());
+
+        extensionFactoryMap.put("genmodel", new XMIResourceFactoryImpl());
+
+    }
+
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    private static void registerPackages(ResourceSet resourceSet) {
+        Map packageRegistry = resourceSet.getPackageRegistry();
+        packageRegistry.put(EcorePackage.eNS_URI, EcorePackage.eINSTANCE);
+        packageRegistry.put(Ecore2XMLPackage.eNS_URI, Ecore2XMLPackage.eINSTANCE);
+        packageRegistry.put(UMLPackage.eNS_URI, UMLPackage.eINSTANCE);
+        packageRegistry.put(UML212UMLResource.UML_METAMODEL_NS_URI, UMLPackage.eINSTANCE);
+
+        packageRegistry.put("http://www.eclipse.org/uml2/1.0.0/UML", UMLPackage.eINSTANCE);
+        packageRegistry.put("http://www.eclipse.org/uml2/2.0.0/UML", UMLPackage.eINSTANCE);
+        packageRegistry.put("http://www.eclipse.org/uml2/3.0.0/UML", UMLPackage.eINSTANCE);
+        packageRegistry.put("http://www.eclipse.org/uml2/4.0.0/UML", UMLPackage.eINSTANCE);
+        packageRegistry.put("http://www.eclipse.org/uml2/5.0.0/UML", UMLPackage.eINSTANCE);
+
+    }
+
+    @SuppressWarnings("unused")
+    private void registerPathmaps(URI uri) {
+        URIConverter.URI_MAP.put(URI.createURI(UMLResource.LIBRARIES_PATHMAP),
+                uri.appendSegment("libraries").appendSegment(""));
+        URIConverter.URI_MAP.put(URI.createURI(UMLResource.METAMODELS_PATHMAP),
+                uri.appendSegment("metamodels").appendSegment(""));
+        URIConverter.URI_MAP.put(URI.createURI(UMLResource.PROFILES_PATHMAP),
+                uri.appendSegment("profiles").appendSegment(""));
+    }
+
+    public static ResourceSet getResourceSet() {
+        if (RESOURCE_SET == null) {
+            RESOURCE_SET = new ResourceSetImpl();
+            registerPackages(getResourceSet());
+            registerResourceFactories();
+        }
+        return RESOURCE_SET;
+    }
 }
