@@ -1,7 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3c04b4b8-9132-46bc-b87d-0ef3b3e92963" name="Default" comment="" />
+    <list default="true" id="3c04b4b8-9132-46bc-b87d-0ef3b3e92963" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/.classpath" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/.idea/compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/.idea/copyright/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/.project" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/.settings/org.eclipse.jdt.core.prefs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/.settings/org.jboss.ide.eclipse.as.core.prefs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.activities_2.6.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.ant_2.8.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.cheatsheets_2.5.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.codegen.ecore_2.11.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.codegen_2.11.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.common_2.11.0.v20150805-0538.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.converter_2.7.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.databinding.edit_1.3.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.databinding_1.3.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.doc_2.8.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.ecore.change.edit_2.6.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.ecore.change_2.11.0.v20150805-0538.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.ecore.edit_2.9.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.ecore.editor_2.11.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.ecore.xmi_2.11.1.v20150805-0538.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.ecore_2.11.1.v20150805-0538.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.edit_2.11.1.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.exporter.html_2.6.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.exporter_2.7.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.gwt.common_2.9.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.gwt.ecore.change_2.8.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.gwt.ecore.edit_2.8.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.gwt.ecore_2.9.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.gwt.edit_2.8.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.gwt_2.6.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.importer.ecore_2.8.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.importer.java_2.7.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.importer.rose_2.8.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.importer_2.9.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.java.edit_2.6.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.java.editor_2.6.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.java_2.6.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.mapping.ecore.editor_2.6.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.mapping.ecore2ecore.editor_2.7.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.mapping.ecore2ecore_2.9.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.mapping.ecore2xml_2.9.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.mapping.ecore_2.6.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.mapping.xsd2ecore.editor_2.6.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.mapping.xsd2ecore_2.6.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.mapping_2.9.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.oda.ecore_1.2.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.oda_1.2.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf.rap_2.6.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.emf_2.6.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.xsd.cheatsheets_2.6.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.xsd.doc_2.7.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.xsd.ecore.converter_2.6.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.xsd.ecore.exporter_2.5.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.xsd.ecore.importer_2.7.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.xsd.edit_2.8.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.xsd.editor_2.8.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.xsd.mapping.editor_2.7.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.xsd.mapping_2.6.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/emf/org.eclipse.xsd_2.11.0.v20150806-0404.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/uml/org.eclipse.uml2.ant_1.0.0.v20150906-1225.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/uml/org.eclipse.uml2.codegen.ecore.ui_2.1.0.v20150906-1225.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/uml/org.eclipse.uml2.codegen.ecore_2.1.0.v20150906-1225.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/uml/org.eclipse.uml2.common.edit_2.1.0.v20150906-1225.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/uml/org.eclipse.uml2.common_2.1.0.v20150906-1225.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/uml/org.eclipse.uml2.doc_5.0.0.v20150906-1225.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/uml/org.eclipse.uml2.types_2.0.0.v20150906-1225.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/uml/org.eclipse.uml2.uml.ecore.exporter_3.0.0.v20150906-1225.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/uml/org.eclipse.uml2.uml.ecore.importer_3.0.0.v20150906-1225.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/uml/org.eclipse.uml2.uml.edit_5.1.1.v20150906-1225.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/uml/org.eclipse.uml2.uml.editor_5.1.0.v20150906-1225.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/uml/org.eclipse.uml2.uml.profile.standard_1.0.100.v20150906-1225.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/uml/org.eclipse.uml2.uml.resources_5.1.0.v20150906-1225.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/uml/org.eclipse.uml2.uml.validation_5.0.0.v20150906-1225.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/uml/org.eclipse.uml2.uml_5.1.0.v20150906-1225.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/jars/uml/org.eclipse.uml2_5.0.0.v20150906-1225.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/model/PrimitiveTypes.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/model/StandardProfile.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/model/UML.uml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/model/UML.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/model/UMLDI.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/project.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/src/org/emf/example/dataobject/ClassAttribute.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/src/org/emf/example/dataobject/ClassDiagram.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/src/org/emf/example/dataobject/ClassInstance.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/src/org/emf/example/dataobject/ClassOperation.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/src/org/emf/example/dataobject/ClassRelation.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/src/org/emf/example/dataobject/ClassStructure.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/src/org/emf/example/dataobject/EnumStructure.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/src/org/emf/example/dataobject/InstanceAttribute.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/src/org/emf/example/dataobject/MethodReturn.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/src/org/emf/example/dataobject/OperationParameter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/src/org/emf/example/dataobject/OperationReturn.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/src/org/emf/example/driver/Driver.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/src/org/emf/example/model/ModelLoader.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/src/org/emf/example/reader/ClassDiagramReader.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/src/org/emf/example/util/ConvertProperties.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMF-ClassDiagram-Example/src/org/emf/example/util/Keywords.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.project" afterPath="$PROJECT_DIR$/.project" />
+    </list>
     <ignored path="EMF-ClassDiagram-Example.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/bin/" />
@@ -22,54 +127,10 @@
     <favorites_list name="EMF-ClassDiagram-Example" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ClassDiagramReader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/emf/example/reader/ClassDiagramReader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#9366#9381#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Driver.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/org/emf/example/driver/Driver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClassDiagram.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/emf/example/dataobject/ClassDiagram.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="50" column="45" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="45" />
-              <folding>
-                <element signature="e#1428#1429#0" expanded="true" />
-                <element signature="e#1480#1481#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Keywords.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/emf/example/util/Keywords.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -131,28 +192,68 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="EMF-ClassDiagram-Example" />
+              <option name="myItemId" value="EMF-ClassDiagram" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="EMF-ClassDiagram-Example" />
+              <option name="myItemId" value="EMF-ClassDiagram" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="EMF-ClassDiagram-Example" />
+              <option name="myItemId" value="EMF-ClassDiagram" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EMF-ClassDiagram" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EMF-ClassDiagram" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="example" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EMF-ClassDiagram" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EMF-ClassDiagram" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="example" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="driver" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -625,11 +726,12 @@
       <workItem from="1462575413549" duration="48000" />
       <workItem from="1462575479859" duration="4000" />
       <workItem from="1464255049775" duration="575000" />
+      <workItem from="1464257032382" duration="151000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1411000" />
+    <option name="totallyTimeSpent" value="1562000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2560" height="1331" extended-state="6" />
@@ -637,12 +739,13 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3292978" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3284907" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -652,13 +755,12 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904148" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -682,148 +784,19 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/org/emf/example/model/ModelLoader.java">
+    <entry file="file://$PROJECT_DIR$/src/org/emf/example/reader/ClassDiagramReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="60">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/emf/example/model/ModelLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/emf/example/model/ModelLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="30" column="46" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/emf/example/util/ConvertProperties.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="28" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/emf/example/driver/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/emf/example/model/ModelLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/emf/example/util/ConvertProperties.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-450">
-          <caret line="0" column="28" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/emf/example/model/ModelLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="46" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/emf/example/dataobject/ClassAttribute.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="110" column="5" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/emf/example/dataobject/ClassMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="28" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/emf/example/dataobject/OperationReturn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/emf/example/dataobject/ClassOperation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/emf/example/dataobject/OperationParameter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/emf/example/dataobject/ClassInstance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/emf/example/dataobject/InstanceAttribute.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-67">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/emf/example/dataobject/ClassStructure.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="e#426#441#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/emf/example/dataobject/ClassRelation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-277">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -848,21 +821,155 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/emf/example/model/ModelLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/emf/example/model/ModelLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/emf/example/model/ModelLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="30" column="46" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/emf/example/util/ConvertProperties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="28" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/emf/example/driver/Driver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/emf/example/model/ModelLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/emf/example/util/ConvertProperties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-450">
+          <caret line="0" column="28" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/emf/example/model/ModelLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="46" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/emf/example/dataobject/ClassAttribute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="110" column="5" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/emf/example/dataobject/ClassMethod.java" />
+    <entry file="file://$PROJECT_DIR$/src/org/emf/example/dataobject/OperationReturn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/emf/example/dataobject/ClassOperation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/emf/example/dataobject/OperationParameter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/emf/example/dataobject/ClassInstance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/emf/example/dataobject/InstanceAttribute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-67">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/emf/example/dataobject/ClassStructure.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="e#426#441#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/emf/example/dataobject/ClassRelation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-277">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/emf/example/dataobject/ClassDiagram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="50" column="45" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="45" />
+          <folding>
+            <element signature="e#1428#1429#0" expanded="true" />
+            <element signature="e#1480#1481#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/emf/example/util/Keywords.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/emf/example/reader/ClassDiagramReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
+        <state relative-caret-position="60">
           <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9366#9381#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/emf/example/driver/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+        <state relative-caret-position="195">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
