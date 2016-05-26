@@ -8,12 +8,12 @@ public class ClassDiagram implements Serializable {
 
     ArrayList<ClassStructure> classes = null;
     ArrayList<EnumStructure> enumerations = null;
-    ArrayList<ClassRelations> relationships = null;
+    ArrayList<ClassRelation> relationships = null;
 
     public ClassDiagram() {
         classes = new ArrayList<ClassStructure>();
         enumerations = new ArrayList<EnumStructure>();
-        relationships = new ArrayList<ClassRelations>();
+        relationships = new ArrayList<ClassRelation>();
     }
 
     public ArrayList<ClassStructure> getClasses() {
@@ -40,15 +40,15 @@ public class ClassDiagram implements Serializable {
         this.enumerations.add(enumeration);
     }
 
-    public ArrayList<ClassRelations> getRelationships() {
+    public ArrayList<ClassRelation> getRelationships() {
         return relationships;
     }
 
-    public void setRelationships(ArrayList<ClassRelations> relationships) {
+    public void setRelationships(ArrayList<ClassRelation> relationships) {
         this.relationships = relationships;
     }
 
-    public void addRelationship(ClassRelations relationship) {
+    public void addRelationship(ClassRelation relationship) {
         this.relationships.add(relationship);
     }
 

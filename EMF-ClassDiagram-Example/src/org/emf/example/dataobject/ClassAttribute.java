@@ -1,111 +1,113 @@
 package org.emf.example.dataobject;
 
 public class ClassAttribute {
-	private String attributeName;
-	private String attributeType;
-	private String attributeVisibility;
-	private String direction;
-	private Object Value;
-	private boolean Class;
-	private boolean collection;
-	
-	
+	private String name;
+	private String type;
+	private String visibility;
+	private Object value;
+	private Object values[];
+	private boolean isClass;
+	private boolean isEnum;
+	private boolean Static;
+	private boolean isCollection;
 
-	public ClassAttribute(String attributeName, String attributeType, String attributeVisibility, String direction,
-			Object value, boolean class1, boolean collection) {
-		super();
-		this.attributeName = attributeName;
-		this.attributeType = attributeType;
-		this.attributeVisibility = attributeVisibility;
-		this.direction = direction;
-		Value = value;
-		Class = class1;
-		this.collection = collection;
-	}
 
 	public ClassAttribute() {
-		attributeName = "";
-		attributeType = "";
-		attributeVisibility = "";
-		 Class=false;
-		 collection=false;
+
 	}
 
-	public ClassAttribute(String variableName, String variableType,
-			String variableVisibility) {
-		this.attributeName = variableName;
-		this.attributeType = variableType;
-		this.attributeVisibility = variableVisibility;
+	public ClassAttribute(String name, String type, Object value, boolean isClass, boolean isEnum, boolean isCollection) {
+		this.name = name;
+		this.type = type;
+		this.value = value;
+		this.isClass = isClass;
+		this.isEnum = isEnum;
+		this.isCollection = isCollection;
 	}
 
-	public String getAttributeName() {
-		return attributeName;
+
+	public String getName() {
+		return name;
 	}
 
-	public void setAttributeName(String attributeName) {
-		this.attributeName = attributeName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getAttributeType() {
-		return attributeType;
+	public String getType() {
+		return type;
 	}
 
-	public void setAttributeType(String attributeType) {
-		this.attributeType = attributeType;
+	public void setType(String type) {
+		this.type = type;
 	}
 
-	public String getAttributeVisibility() {
-		return attributeVisibility;
+	public String getVisibility() {
+		return visibility;
 	}
 
-	public void setAttributeVisibility(String attributeVisibility) {
-		this.attributeVisibility = attributeVisibility;
-	}
-
-	public String getDirection() {
-		return direction;
-	}
-
-	public void setDirection(String direction) {
-		this.direction = direction;
+	public void setVisibility(String visibility) {
+		this.visibility = visibility;
 	}
 
 	public Object getValue() {
-		return Value;
+		return value;
 	}
 
 	public void setValue(Object value) {
-		Value = value;
+		this.value = value;
 	}
 
-	public boolean isClass() {
-		return Class;
+	public boolean getIsCollection() {
+		return isCollection;
 	}
 
-	public void setClass(boolean class1) {
-		Class = class1;
+	public boolean isStatic() {
+		return Static;
+	}
+
+	public void setStatic(boolean aStatic) {
+		Static = aStatic;
 	}
 
 	public boolean isCollection() {
-		return collection;
+		return isCollection;
 	}
 
 	public void setCollection(boolean collection) {
-		this.collection = collection;
+		isCollection = collection;
 	}
 
-	public String printAttribute() {
-		String variable = "";
-		variable += this.attributeType + " " + this.attributeName;
-		return variable;
-
+	public boolean isClass() {
+		return isClass;
 	}
 
-	public String printCompleteVariable() {
-		String variable = "";
-		variable += this.attributeVisibility + " " + this.attributeType + " "
-				+ this.attributeName;
-		return variable;
+	public boolean getIsClass() {
+		return isClass;
+	}
+
+	public void setClass(boolean aClass) {
+		isClass = aClass;
+	}
+
+	public boolean isEnum() {
+		return isEnum;
+	}
+
+	public boolean getIsEnum() {
+		return isEnum;
+	}
+
+	public void setEnum(boolean anEnum) {
+		isEnum = anEnum;
+	}
+
+	public Object[] getValues() {
+		return values;
+	}
+
+	public void setValues(Object[] values) {
+		this.values = values;
 	}
 
 }

@@ -11,7 +11,7 @@ public class Driver {
 		File model = new File("model/UML.uml");
 		ClassDiagram cd = new ClassDiagramReader().getRefModelDetails(model);
 		for (ClassStructure cs : cd.getClasses()) {
-			System.out.println(cs.getClassName());
+			System.out.println(cs.getName());
 		}
 	}
 }
