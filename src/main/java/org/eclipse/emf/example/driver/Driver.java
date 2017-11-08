@@ -1,8 +1,6 @@
-# Eclipse Modeling Framework Model Reader
+package org.eclipse.emf.example.driver;
 
-## Example
 
-```java
 import org.eclipse.emf.example.loader.ModelLoader;
 import org.eclipse.emf.example.models._activity.ActivityDiagram;
 import org.eclipse.emf.example.models._class.ClassDiagram;
@@ -84,5 +82,3 @@ public class Driver {
         }
     }
 }
-
-```

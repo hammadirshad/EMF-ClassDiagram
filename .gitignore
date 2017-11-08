@@ -1,1 +1,12 @@
-/bin/
+*.class
+*.jar
+*/target
+/target
+/.DS_Store
+/.idea
+/*.iml
+*/*.iml
+/smaple
+/.gradle
+.gradle/
+/build
