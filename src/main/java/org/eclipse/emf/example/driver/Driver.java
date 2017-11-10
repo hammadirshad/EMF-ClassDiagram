@@ -5,6 +5,7 @@ import org.eclipse.emf.example.loader.ModelLoader;
 import org.eclipse.emf.example.models._activity.ActivityDiagram;
 import org.eclipse.emf.example.models._class.ClassDiagram;
 import org.eclipse.emf.example.models._class.ClassStructure;
+import org.eclipse.emf.example.models._enum.EnumStructure;
 import org.eclipse.emf.example.models._package.PackageDiagram;
 import org.eclipse.emf.example.models._sequence.SequenceDiagram;
 import org.eclipse.emf.example.models._sequence.SequenceMessage;
@@ -20,26 +21,32 @@ import java.util.List;
 public class Driver {
     public static void main(String args[]) throws Exception {
         File model = new File("src/main/resources/model/UML.uml");
+
         classDiagramReader(model);
         packageDiagramReader(model);
         activityDiagramReader(model);
         sequenceDiagramReader(model);
         stateMachineReader(model);
         useCaseDiagramReader(model);
+        profileReader(model);
     }
 
     public static void classDiagramReader(File model) throws IOException {
         Package aPackage = new ModelLoader().loadModel(model);
-        ClassDiagram classDiagram = new ClassDiagramReader().getRefModelDetails(aPackage);
+        ClassDiagram classDiagram = ClassDiagramReader.getRefModelDetails(aPackage);
         for (ClassStructure cs : classDiagram.getClasses()) {
-            System.out.println(cs.getName());
+            System.out.println("Class: " + cs.getPackage() + "." + cs.getName());
+        }
+
+        for (EnumStructure enumStructure : classDiagram.getEnumerations()) {
+            System.out.println("Enumeration: " + enumStructure.getPackage() + "." + enumStructure.getName());
         }
     }
 
 
     public static void packageDiagramReader(File model) throws IOException {
         Package aPackage = new ModelLoader().loadModel(model);
-        List<PackageDiagram> packageDiagrams = new PackageDiagramReader().getRefModelDetails(aPackage);
+        List<PackageDiagram> packageDiagrams = PackageDiagramReader.getRefModelDetails(aPackage);
         for (PackageDiagram packageDiagram : packageDiagrams) {
             System.out.println(packageDiagram.getPackageName());
         }
@@ -48,7 +55,7 @@ public class Driver {
 
     public static void activityDiagramReader(File model) throws IOException {
         Package aPackage = new ModelLoader().loadModel(model);
-        ActivityDiagram activityDiagram = new ActivityDiagramReader().getRefModelDetails(aPackage);
+        ActivityDiagram activityDiagram = ActivityDiagramReader.getRefModelDetails(aPackage);
         System.out.println(activityDiagram.getActivityName());
         for (String edges : activityDiagram.getEdges()) {
             System.out.println(edges);
@@ -58,7 +65,7 @@ public class Driver {
 
     public static void sequenceDiagramReader(File model) throws IOException {
         Package aPackage = new ModelLoader().loadModel(model);
-        SequenceDiagram sequenceDiagram = new SequenceDiagramReader().getRefModelDetails(aPackage);
+        SequenceDiagram sequenceDiagram = SequenceDiagramReader.getRefModelDetails(aPackage);
         for (SequenceMessage sequenceMessage : sequenceDiagram.getMessages()) {
             System.out.println(sequenceMessage.getMessageName());
         }
@@ -81,4 +88,12 @@ public class Driver {
             System.out.println(actor);
         }
     }
+
+
+    public static void profileReader(File model) throws IOException {
+        Package aPackage = new ModelLoader().loadModel(model);
+        new UMLProfileReader().getRefModelDetails(aPackage);
+
+    }
+
 }

@@ -5,6 +5,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.example.models._class.*;
 import org.eclipse.emf.example.models._enum.EnumStructure;
+import org.eclipse.emf.example.models._package.PackageStructure;
 import org.eclipse.emf.example.util.Keywords;
 import org.eclipse.uml2.uml.*;
 import org.eclipse.uml2.uml.Class;
@@ -20,66 +21,102 @@ import java.util.Map;
 public class ClassDiagramReader implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    private static ClassDiagram refModelDetail;
-    private Map<String, List<String>> superClassMap;
-    private Map<String, ClassStructure> classMap;
-    private Map<String, List<ClassInstance>> classInstanceMap;
+    public static ClassDiagram getRefModelDetails(Package _package) {
 
+        ClassDiagram classDiagram = new ClassDiagram();
 
-    public ClassDiagramReader() {
-        refModelDetail = new ClassDiagram();
-        superClassMap = new HashMap<>();
-        classMap = new HashMap<>();
-        classInstanceMap = new HashMap<>();
-    }
-
-    public ClassDiagram getRefModelDetails(Package _package) {
-
+        PackageStructure packageStructure;
         if (_package != null) {
             EList<PackageableElement> packageableElements = _package.getPackagedElements();
             String packageName = _package.getName() != null ? _package.getName() : "";
-            readPackage(packageableElements, packageName);
+            packageStructure = readPackage(packageableElements, packageName);
         } else {
             System.err.println("Package is null");
             return null;
         }
 
-
-        for (ClassStructure cs :
-                classMap.values()) {
-            if (classInstanceMap
-                    .containsKey(cs.getName())) {
-                List<ClassInstance> classInstances = classInstanceMap.get(cs.getName());
-                cs.getInstances().addAll(classInstances);
+        Map<String, ClassStructure> classes = classStructures(packageStructure);
+        for (ClassStructure cs : classes.values()) {
+            List<ClassStructure> superClasses = new ArrayList<>();
+            for (ClassStructure superClass : cs.getSuperClasses()) {
+                superClasses.add(classes.get(superClass.getName()));
             }
+            cs.setSuperClasses(superClasses);
 
 
-            if (superClassMap
-                    .containsKey(cs.getName())) {
-                List<String> superClasses = superClassMap.get(cs.getName());
-                for (String superClass : superClasses) {
-                    cs.addSuperClass(classMap.get(superClass));
-
-                }
-            }
-
-            refModelDetail.addClass(cs);
         }
 
-        return refModelDetail;
+        Map<String, ClassInstance> instances = classInstances(packageStructure);
+
+        for (ClassInstance classInstance : instances.values()) {
+            for (ClassStructure classStructure : classInstance.getClasses()) {
+                classes.get(classStructure.getName()).getInstances().add(classInstance);
+            }
+        }
+
+        classDiagram.getEnumerations().addAll(enumStructure(packageStructure).values());
+        classDiagram.getClasses().addAll(classes.values());
+        classDiagram.getInstances().addAll(instances.values());
+
+        return classDiagram;
     }
 
-    private void readPackage(EList<PackageableElement> packageableElements, String packageName) {
+    private static Map<String, ClassInstance> classInstances(PackageStructure packageStructure) {
+        Map<String, ClassInstance> instances = new HashMap<>();
+
+        for (ClassInstance classInstance : packageStructure.getInstances()) {
+            instances.put(classInstance.getName(), classInstance);
+        }
+
+        for (PackageStructure ps : packageStructure.getPackages()) {
+            instances.putAll(classInstances(ps));
+        }
+        return instances;
+    }
+
+    private static Map<String, ClassStructure> classStructures(PackageStructure packageStructure) {
+        Map<String, ClassStructure> classes = new HashMap<>();
+
+        for (ClassStructure classStructure : packageStructure.getClasses()) {
+            classes.put(classStructure.getName(), classStructure);
+        }
+
+        for (PackageStructure ps : packageStructure.getPackages()) {
+            classes.putAll(classStructures(ps));
+        }
+        return classes;
+    }
+
+
+    private static Map<String, EnumStructure> enumStructure(PackageStructure packageStructure) {
+        Map<String, EnumStructure> enums = new HashMap<>();
+
+        for (EnumStructure classStructure : packageStructure.getEnums()) {
+            enums.put(classStructure.getName(), classStructure);
+        }
+
+        for (PackageStructure ps : packageStructure.getPackages()) {
+            enums.putAll(enumStructure(ps));
+        }
+        return enums;
+    }
+
+    private static PackageStructure readPackage(EList<PackageableElement> packageableElements, String packageName) {
+
+        PackageStructure packageStructure = new PackageStructure();
+        packageStructure.setName(packageName);
 
         for (PackageableElement element : packageableElements) {
 
             if (element.eClass() == UMLPackage.Literals.CLASS) {
-                ClassStructure cs = readClass(element, packageName);
-                classMap.put(cs.getName(), cs);
+                ClassStructure classStructure = readClass(element, packageName);
+                packageStructure.getClasses().add(classStructure);
             } else if (element.eClass() == UMLPackage.Literals.ENUMERATION) {
-                refModelDetail.addEnumeration(readEnumeration(element, packageName));
+                EnumStructure enumStructure = readEnumeration(element, packageName);
+                packageStructure.getEnums().add(enumStructure);
             } else if (element.eClass() == UMLPackage.eINSTANCE.getInstanceSpecification()) {
-                readInstance(element, packageName);
+                ClassInstance classInstance = readInstance(element, packageName);
+                packageStructure.getInstances().add(classInstance);
             } else if (element.eClass() == UMLPackage.Literals.PACKAGE) {
                 Package _package = (Package) element;
                 String newPackageName;
@@ -93,16 +130,18 @@ public class ClassDiagramReader implements Serializable {
                             ? packageName + "." + _package.getName()
                             : packageName;
                 }
-                readPackage(_package.getPackagedElements(), newPackageName);
-
+                PackageStructure nustedPackageStructure = readPackage(_package.getPackagedElements(), newPackageName);
+                packageStructure.getPackages().add(nustedPackageStructure);
             }
         }
+        return packageStructure;
     }
 
-    private void readInstance(PackageableElement element, String packageName) {
+    private static ClassInstance readInstance(PackageableElement element, String packageName) {
+        ClassInstance classInstance = new ClassInstance();
         InstanceSpecification instance = (InstanceSpecification) element;
         if (instance.getName() != null && !instance.getName().isEmpty()) {
-            ClassInstance classInstance = new ClassInstance();
+
             classInstance.setName(instance.getName());
             classInstance.set_package(packageName);
 
@@ -171,23 +210,19 @@ public class ClassDiagramReader implements Serializable {
 
             for (Classifier classifier : instance.getClassifiers()) {
                 if (instance.getName() != null && classifier.getName() != null) {
-                    if (classInstanceMap.containsKey(classifier.getName())) {
-                        List<ClassInstance> intances = classInstanceMap.get(classifier.getName());
-                        intances.add(classInstance);
-                        classInstanceMap.put(classifier.getName(), intances);
-                    } else {
-                        List<ClassInstance> intances = new ArrayList<>();
-                        intances.add(classInstance);
-                        classInstanceMap.put(classifier.getName(), intances);
-                    }
+                    ClassStructure classStructure = new ClassStructure();
+                    classStructure.setName(classifier.getName());
+                    classStructure.setPackage(classifier.getPackage().getName());
+                    classInstance.getClasses().add(classStructure);
                 }
             }
         }
 
+        return classInstance;
 
     }
 
-    private EnumStructure readEnumeration(PackageableElement element, String packageName) {
+    public static EnumStructure readEnumeration(PackageableElement element, String packageName) {
 
         EnumStructure structure = new EnumStructure();
         Enumeration enumeration = (Enumeration) element;
@@ -200,8 +235,8 @@ public class ClassDiagramReader implements Serializable {
         return structure;
     }
 
-    private ClassStructure readClass(Element element, String packageName) {
-        ClassStructure structure = new ClassStructure();
+    private static ClassStructure readClass(Element element, String packageName) {
+        ClassStructure classStructure = new ClassStructure();
         Class _class = (Class) element;
         List<String> rules = new ArrayList<>();
         //System.out.println(_class.getName());
@@ -210,9 +245,7 @@ public class ClassDiagramReader implements Serializable {
         for (Constraint constraint : _class.getOwnedRules()) {
             if (constraint.getSpecification() instanceof OpaqueExpressionImpl) {
                 OpaqueExpressionImpl expressionImpl = (OpaqueExpressionImpl) constraint.getSpecification();
-                for (String body : expressionImpl.getBodies()) {
-                    rules.add(body);
-                }
+                rules.addAll(expressionImpl.getBodies());
             }
 
         }
@@ -220,31 +253,25 @@ public class ClassDiagramReader implements Serializable {
 
         for (Class superClass : _class.getSuperClasses()) {
 
-            if (superClassMap.containsKey(_class.getName())) {
-                List<String> values = superClassMap.get(_class.getName());
-                values.add(superClass.getName());
-                superClassMap.put(_class.getName(), values);
-
-            } else {
-                List<String> values = new ArrayList<>();
-                values.add(superClass.getName());
-                superClassMap.put(_class.getName(), values);
-            }
+            ClassStructure superClassStructure = new ClassStructure();
+            classStructure.setName(superClass.getName());
+            classStructure.setPackage(superClass.getPackage().getName());
+            classStructure.getSuperClasses().add(superClassStructure);
 
         }
 
 
         //System.out.println("\n  -------- \n");
 
-        structure.setPackage(packageName);
-        structure.setVisibility(_class.getVisibility().toString());
-        structure.setRules(rules);
-        structure.setAbstract(_class.isAbstract());
-        structure.setFinal(_class.isLeaf());
-        structure.setName(_class.getName());
-        structure.setAttributes(readAttribute(_class));
-        structure.setOperations(readClassOperations(_class));
-        structure.setRelationships(readClassRelations(_class));
+        classStructure.setPackage(packageName);
+        classStructure.setVisibility(_class.getVisibility().toString());
+        classStructure.setRules(rules);
+        classStructure.setAbstract(_class.isAbstract());
+        classStructure.setFinal(_class.isLeaf());
+        classStructure.setName(_class.getName());
+        classStructure.setAttributes(readAttribute(_class));
+        classStructure.setOperations(readClassOperations(_class));
+        classStructure.setRelationships(readClassRelations(_class));
 
 
         for (NamedElement inheritedElement : _class.getInheritedMembers()) {
@@ -253,23 +280,23 @@ public class ClassDiagramReader implements Serializable {
                 Property property = (Property) inheritedElement;
                 ClassAttribute attribute = readAttribute(property);
                 if (attribute != null && attribute.getName() != null) {
-                    structure.addAttribute(attribute);
+                    classStructure.addAttribute(attribute);
                 }
             } else if (inheritedElement instanceof Operation) {
                 Operation operation = (Operation) inheritedElement;
                 ClassOperation classOperation = readClassOperation(operation);
                 if (classOperation != null) {
-                    structure.addOperation(classOperation);
+                    classStructure.addOperation(classOperation);
                 }
             }
 
         }
 
 
-        return structure;
+        return classStructure;
     }
 
-    private ArrayList<ClassRelation> readClassRelations(Class _class) {
+    private static ArrayList<ClassRelation> readClassRelations(Class _class) {
         ArrayList<ClassRelation> list = new ArrayList<>();
         EList<Relationship> classRelationships = _class.getRelationships();
         for (Relationship relationship : classRelationships) {
@@ -284,7 +311,7 @@ public class ClassDiagramReader implements Serializable {
     }
 
 
-    private ArrayList<ClassOperation> readClassOperations(Class _class) {
+    private static ArrayList<ClassOperation> readClassOperations(Class _class) {
         ArrayList<ClassOperation> operations = new ArrayList<>();
         List<Operation> ownedOperations = _class.getOwnedOperations();
         if (!ownedOperations.isEmpty()) {
@@ -300,7 +327,7 @@ public class ClassDiagramReader implements Serializable {
         return operations;
     }
 
-    private ClassOperation readClassOperation(Operation operation) {
+    private static ClassOperation readClassOperation(Operation operation) {
 
         ClassOperation classOperation = new ClassOperation();
         classOperation.setName(operation.getName());
@@ -439,7 +466,7 @@ public class ClassDiagramReader implements Serializable {
     }
 
 
-    private ArrayList<ClassAttribute> readAttribute(Class _class) {
+    private static ArrayList<ClassAttribute> readAttribute(Class _class) {
         ArrayList<ClassAttribute> attributes = new ArrayList<>();
         EList<Property> ownedAttributes = _class.getOwnedAttributes();
         if (!ownedAttributes.isEmpty()) {
@@ -453,7 +480,7 @@ public class ClassDiagramReader implements Serializable {
         return attributes;
     }
 
-    private ClassAttribute readAttribute(Property property) {
+    private static ClassAttribute readAttribute(Property property) {
 
         ClassAttribute attribute = new ClassAttribute();
         if (property.getType() instanceof PrimitiveTypeImpl) {
@@ -512,7 +539,7 @@ public class ClassDiagramReader implements Serializable {
     }
 
 
-    private ClassRelation readGeneralization(Element element) {
+    private static ClassRelation readGeneralization(Element element) {
         Generalization generalization = (Generalization) element;
         ClassRelation relation = new ClassRelation();
         relation.setType(Keywords.Generalization);
@@ -529,12 +556,11 @@ public class ClassDiagramReader implements Serializable {
 
             }
         }
-        refModelDetail.addRelationship(relation);
         return relation;
     }
 
 
-    private ClassRelation readAssociation(Element element) {
+    private static  ClassRelation readAssociation(Element element) {
         Association association = (Association) element;
 
         ClassRelation relation = new ClassRelation();
@@ -600,12 +626,12 @@ public class ClassDiagramReader implements Serializable {
 
         }
 
-        refModelDetail.addRelationship(relation);
+
         return relation;
     }
 
 
-    private boolean attributeInterfaceCollection(String proxyFragment) {
+    private static boolean attributeInterfaceCollection(String proxyFragment) {
         boolean isCollection = false;
         if (proxyFragment != null && !proxyFragment.isEmpty()) {
             if (proxyFragment.contains("java.util.List") || proxyFragment.contains("java.util.ArrayList")) {
@@ -616,7 +642,7 @@ public class ClassDiagramReader implements Serializable {
         return isCollection;
     }
 
-    private String attributeInterface(String proxyFragment) {
+    private static String attributeInterface(String proxyFragment) {
         String arrtibuteType = "";
         boolean isCollection = false;
         if (proxyFragment != null && !proxyFragment.isEmpty()) {

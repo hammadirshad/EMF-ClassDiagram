@@ -7,7 +7,7 @@ import org.eclipse.uml2.uml.Package;
 
 public class ActivityDiagramReader {
 
-    public ActivityDiagram getRefModelDetails(Package _package) {
+    public static ActivityDiagram getRefModelDetails(Package _package) {
         ActivityDiagram adDetails = new ActivityDiagram();
 
         EList<PackageableElement> packageableElements;
@@ -25,20 +25,20 @@ public class ActivityDiagramReader {
                 adDetails.setActivityName(activity.getName());
                 for (ActivityNode an : activity.getNodes()) {
                     if (an.eClass() == UMLPackage.Literals.OPAQUE_ACTION) {
-                        adDetails.addOpaqueActions(an.getName());
+                        adDetails.getOpaqueActions().add(an.getName());
                     } else if (an.eClass() == UMLPackage.Literals.JOIN_NODE) {
-                        adDetails.addJoins(an.getName());
+                        adDetails.getJoins().add(an.getName());
                     } else if (an.eClass() == UMLPackage.Literals.FORK_NODE) {
-                        adDetails.addForks(an.getName());
+                        adDetails.getForks().add(an.getName());
                     } else if (an.eClass() == UMLPackage.Literals.MERGE_NODE) {
-                        adDetails.addMerges(an.getName());
+                        adDetails.getMerges().add(an.getName());
                     } else if (an.eClass() == UMLPackage.Literals.DECISION_NODE) {
-                        adDetails.addDecisions(an.getName());
+                        adDetails.getDecisions().add(an.getName());
                     }
                 }
                 for (ActivityEdge ed : activity.getEdges()) {
-                    adDetails
-                            .addEdges(ed.getSource().getName() + ","
+                    adDetails.getEdges()
+                            .add(ed.getSource().getName() + ","
                                     + ed.getName() + ","
                                     + ed.getTarget().getName());
                 }

@@ -3,25 +3,22 @@ package org.eclipse.emf.example.models._class;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClassStructure implements Cloneable {
+public class ClassStructure {
 
     private String _package;
-    private List<String> imports = new ArrayList<String>();
+    private List<String> imports = new ArrayList<>();
     private String name;
     private String visibility;
     private String type;
-    private List<String> rules = new ArrayList<String>();
-    private List<ClassInstance> instances = new ArrayList<ClassInstance>();
     private boolean _abstract;
     private boolean _final;
+    private List<String> rules = new ArrayList<>();
+    private List<ClassInstance> instances = new ArrayList<>();
     private List<ClassStructure> superClasses = new ArrayList<>();
-    private List<ClassAttribute> attributes = new ArrayList<ClassAttribute>();
-    private List<ClassOperation> operations = new ArrayList<ClassOperation>();
-    private List<ClassRelation> relationships = new ArrayList<ClassRelation>();
+    private List<ClassAttribute> attributes = new ArrayList<>();
+    private List<ClassOperation> operations = new ArrayList<>();
+    private List<ClassRelation> relationships = new ArrayList<>();
 
-    public Object clone() throws CloneNotSupportedException {
-        return super.clone();
-    }
 
     public void addRelationship(ClassRelation relationship) {
         relationships.add(relationship);

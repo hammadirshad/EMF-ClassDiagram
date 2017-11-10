@@ -12,12 +12,13 @@ import org.eclipse.uml2.uml.internal.impl.*;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class SequenceDiagramReader implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    public SequenceDiagram getRefModelDetails(Package _package) {
+    public static SequenceDiagram getRefModelDetails(Package _package) {
 
         EList<PackageableElement> packageableElements;
 
@@ -47,7 +48,7 @@ public class SequenceDiagramReader implements Serializable {
                 for (Property property : collaborationImpl.getAttributes()) {
                     SequenceAttribute attribute = new SequenceAttribute(
                             property.getName(), property.getType().getName());
-                    sequenceDiagram.addAttribute(attribute);
+                    sequenceDiagram.getAttributes().add(attribute);
                 }
 
                 if (collaborationImpl.getOwnedBehaviors() != null) {
@@ -91,7 +92,7 @@ public class SequenceDiagramReader implements Serializable {
      * gates,MessageOccurrence,CombinedFragment,BehaviorExecution
      */
 
-    private SequenceDiagram interactionReader(InteractionImpl interactionImpl) {
+    private static SequenceDiagram interactionReader(InteractionImpl interactionImpl) {
         SequenceDiagram sd = new SequenceDiagram();
 
         // reading behaviors
@@ -99,7 +100,7 @@ public class SequenceDiagramReader implements Serializable {
                 .getFragments()) {
             if (interactionFragment instanceof BehaviorExecutionSpecificationImpl) {
                 BehaviorExecutionSpecificationImpl fragment = (BehaviorExecutionSpecificationImpl) interactionFragment;
-                sd.addBehavior(behaviorReader(fragment));
+                sd.getBehaviors().add(behaviorReader(fragment));
             }
         }
 
@@ -108,7 +109,7 @@ public class SequenceDiagramReader implements Serializable {
                 .getFragments()) {
             if (interactionFragment instanceof CombinedFragment) {
                 CombinedFragment combinedFragment = (CombinedFragment) interactionFragment;
-                sd.addFragment(fragmentReader(combinedFragment));
+                sd.getFragments().add(fragmentReader(combinedFragment));
             }
         }
 
@@ -119,25 +120,25 @@ public class SequenceDiagramReader implements Serializable {
 
         // FormalGates
         for (Gate gate : interactionImpl.getFormalGates()) {
-            sd.addGate(gateReader(gate));
+            sd.getGates().add(gateReader(gate));
         }
 
         // LifLines
         for (Lifeline lifeline : interactionImpl.getLifelines()) {
-            sd.addLifeline(lifelineReader(lifeline));
+            sd.getLifelines().add(lifelineReader(lifeline));
         }
 
         // Messages
         for (Message message : interactionImpl.getMessages()) {
-            sd.addMessage(messageReader(message));
+            sd.getMessages().add(messageReader(message));
         }
 
         return sd;
 
     }
 
-    private void addBehaviorDetail(SequenceBehavior behavior,
-                                   EList<InteractionFragment> fragments) {
+    private static void addBehaviorDetail(SequenceBehavior behavior,
+                                          EList<InteractionFragment> fragments) {
         ArrayList<String> calles = new ArrayList<>();
         // MessageOccurrence
         for (InteractionFragment interactionFragment : fragments) {
@@ -221,7 +222,7 @@ public class SequenceDiagramReader implements Serializable {
      * @return SequenceCombinedFragment
      */
 
-    private SequenceCombinedFragment fragmentReader(
+    private static SequenceCombinedFragment fragmentReader(
             CombinedFragment combinedFragment) {
 
         SequenceCombinedFragment sequenceCombinedFragment = new SequenceCombinedFragment();
@@ -265,7 +266,7 @@ public class SequenceDiagramReader implements Serializable {
      * @param fragment BehaviorExecutionSpecificationImpl
      * @return SequenceBehavior
      */
-    private SequenceBehavior behaviorReader(
+    private static SequenceBehavior behaviorReader(
             BehaviorExecutionSpecificationImpl fragment) {
         SequenceBehavior behavior = new SequenceBehavior();
         for (Lifeline lifeline : fragment.getCovereds()) {
@@ -292,7 +293,7 @@ public class SequenceDiagramReader implements Serializable {
      * @param gate Gate
      * @return SequenceGate
      */
-    private SequenceGate gateReader(Gate gate) {
+    private static SequenceGate gateReader(Gate gate) {
         SequenceGate sequenceGate = new SequenceGate();
         sequenceGate.setGateMessage(gate.getMessage().getName());
         MessageEnd interactionFragment = gate.getMessage().getReceiveEvent();
@@ -316,7 +317,7 @@ public class SequenceDiagramReader implements Serializable {
      * @param lifeline Lifeline
      * @return SequenceLifeline
      */
-    private SequenceLifeline lifelineReader(Lifeline lifeline) {
+    private static SequenceLifeline lifelineReader(Lifeline lifeline) {
         SequenceLifeline sequenceLifeline = new SequenceLifeline();
         sequenceLifeline.setLifelineName(lifeline.getName());
         sequenceLifeline.setRepresents(lifeline.getRepresents().getName());
@@ -330,7 +331,7 @@ public class SequenceDiagramReader implements Serializable {
      * @param message Message
      * @return SequenceMessage
      */
-    private SequenceMessage messageReader(Message message) {
+    private static SequenceMessage messageReader(Message message) {
         SequenceMessage sequenceMessage = new SequenceMessage();
         if (message != null) {
             if (!message.getName().isEmpty()) {
@@ -378,7 +379,7 @@ public class SequenceDiagramReader implements Serializable {
         return sequenceMessage;
     }
 
-    private ArrayList<ClassOperation> readOperations(EList<Operation> eList) {
+    private static List<ClassOperation> readOperations(EList<Operation> eList) {
         ArrayList<String> opps = new ArrayList<>();
         ArrayList<ClassOperation> structure = new ArrayList<>();
         if (!eList.isEmpty()) {
@@ -431,8 +432,8 @@ public class SequenceDiagramReader implements Serializable {
         return structure;
     }
 
-    private ArrayList<ClassAttribute> readAttributes(EList<Property> attributes) {
-        ArrayList<ClassAttribute> structure = new ArrayList<ClassAttribute>();
+    private static List<ClassAttribute> readAttributes(EList<Property> attributes) {
+        List<ClassAttribute> structure = new ArrayList<>();
         if (!attributes.isEmpty()) {
             for (Property attribute : attributes) {
                 ClassAttribute classAttribute = new ClassAttribute();

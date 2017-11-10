@@ -1,26 +1,16 @@
 package org.eclipse.emf.example.models._activity;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ActivityDiagram {
     private String activityName;
-    private ArrayList<String> decisions;
-    private ArrayList<String> merges;
-    private ArrayList<String> forks;
-    private ArrayList<String> joins;
-    private ArrayList<String> opaqueActions;
-    private ArrayList<String> edges;
-
-
-    public ActivityDiagram() {
-        activityName = null;
-        decisions = new ArrayList<>();
-        merges = new ArrayList<>();
-        forks = new ArrayList<>();
-        joins = new ArrayList<>();
-        opaqueActions = new ArrayList<>();
-        edges = new ArrayList<>();
-    }
+    private List<String> decisions= new ArrayList<>();
+    private List<String> merges= new ArrayList<>();
+    private List<String> forks= new ArrayList<>();
+    private List<String> joins= new ArrayList<>();
+    private List<String> opaqueActions= new ArrayList<>();
+    private List<String> edges= new ArrayList<>();
 
 
     public String getActivityName() {
@@ -31,77 +21,51 @@ public class ActivityDiagram {
         this.activityName = activityName;
     }
 
-    public ArrayList<String> getDecisions() {
+    public List<String> getDecisions() {
         return decisions;
     }
 
-    public void setDecisions(ArrayList<String> decisions) {
+    public void setDecisions(List<String> decisions) {
         this.decisions = decisions;
     }
 
-    public void addDecisions(String decision) {
-        this.decisions.add(decision);
-    }
-
-    public ArrayList<String> getMerges() {
+    public List<String> getMerges() {
         return merges;
     }
 
-    public void setMerges(ArrayList<String> merges) {
+    public void setMerges(List<String> merges) {
         this.merges = merges;
     }
 
-    public void addMerges(String merge) {
-        this.forks.add(merge);
-    }
-
-    public ArrayList<String> getForks() {
+    public List<String> getForks() {
         return forks;
     }
 
-    public void setForks(ArrayList<String> forks) {
+    public void setForks(List<String> forks) {
         this.forks = forks;
     }
 
-    public void addForks(String fork) {
-        this.forks.add(fork);
-    }
-
-    public ArrayList<String> getJoins() {
+    public List<String> getJoins() {
         return joins;
     }
 
-    public void setJoins(ArrayList<String> joins) {
+    public void setJoins(List<String> joins) {
         this.joins = joins;
     }
 
-    public void addJoins(String join) {
-        this.joins.add(join);
-    }
-
-    public ArrayList<String> getOpaqueActions() {
+    public List<String> getOpaqueActions() {
         return opaqueActions;
     }
 
-    public void setOpaqueActions(ArrayList<String> opaqueActions) {
+    public void setOpaqueActions(List<String> opaqueActions) {
         this.opaqueActions = opaqueActions;
     }
 
-    public void addOpaqueActions(String opaqueAction) {
-        this.opaqueActions.add(opaqueAction);
-    }
-
-    public ArrayList<String> getEdges() {
+    public List<String> getEdges() {
         return edges;
     }
 
-    public void setEdges(ArrayList<String> edges) {
+    public void setEdges(List<String> edges) {
         this.edges = edges;
     }
-
-    public void addEdges(String edge) {
-        this.edges.add(edge);
-    }
-
-
 }

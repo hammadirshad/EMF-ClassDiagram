@@ -3,16 +3,12 @@ package org.eclipse.emf.example.models._class;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClassInstance implements Cloneable {
+public class ClassInstance{
 
     private String _package;
     private String name;
-    private List<InstanceAttribute> attributes = new ArrayList<InstanceAttribute>();
-
-
-    public Object clone() throws CloneNotSupportedException {
-        return super.clone();
-    }
+    private List<ClassStructure> classes=new ArrayList<>();
+    private List<InstanceAttribute> attributes = new ArrayList<>();
 
 
     public void addAttribute(InstanceAttribute attribute) {
@@ -33,6 +29,14 @@ public class ClassInstance implements Cloneable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<ClassStructure> getClasses() {
+        return classes;
+    }
+
+    public void setClasses(List<ClassStructure> classes) {
+        this.classes = classes;
     }
 
     public List<InstanceAttribute> getAttributes() {

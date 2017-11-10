@@ -12,6 +12,7 @@ import org.eclipse.uml2.uml.internal.impl.UseCaseImpl;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 public class UseCaseDiagramReader implements Serializable {
 
@@ -21,8 +22,8 @@ public class UseCaseDiagramReader implements Serializable {
      * This function inputs a reference model and return a hashtable containing
      * use case model details (i.e. actors, usecase name, associations)
      */
-    public UseCaseDiagram getRefModelDetails(Package _package) {
-
+    public static UseCaseDiagram getRefModelDetails(Package _package) {
+        UseCaseDiagram ud = new UseCaseDiagram();
         EList<PackageableElement> packageableElements;
 
         if (_package != null) {
@@ -31,10 +32,10 @@ public class UseCaseDiagramReader implements Serializable {
             System.err.println("Package is null");
             return null;
         }
-        UseCaseDiagram ud = new UseCaseDiagram();
-        ArrayList<String> actors = new ArrayList<String>();
-        ArrayList<String> usecases = new ArrayList<String>();
-        ArrayList<String> associations = new ArrayList<String>();
+
+        List<String> actors = new ArrayList<>();
+        List<String> usecases = new ArrayList<>();
+        List<String> associations = new ArrayList<>();
 
         for (PackageableElement element : packageableElements) {
             if (element.eClass() == UMLPackage.Literals.ACTOR)

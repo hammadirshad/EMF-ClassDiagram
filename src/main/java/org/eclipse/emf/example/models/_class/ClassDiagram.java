@@ -9,15 +9,9 @@ import java.util.ArrayList;
 public class ClassDiagram implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    private ArrayList<ClassStructure> classes = null;
-    private ArrayList<EnumStructure> enumerations = null;
-    private ArrayList<ClassRelation> relationships = null;
-
-    public ClassDiagram() {
-        classes = new ArrayList<ClassStructure>();
-        enumerations = new ArrayList<EnumStructure>();
-        relationships = new ArrayList<ClassRelation>();
-    }
+    private ArrayList<ClassStructure> classes = new ArrayList<>();
+    private ArrayList<ClassInstance> instances = new ArrayList<>();
+    private ArrayList<EnumStructure> enumerations = new ArrayList<>();
 
     public ArrayList<ClassStructure> getClasses() {
         return classes;
@@ -29,6 +23,18 @@ public class ClassDiagram implements Serializable {
 
     public void addClass(ClassStructure _class) {
         this.classes.add(_class);
+    }
+
+    public ArrayList<ClassInstance> getInstances() {
+        return instances;
+    }
+
+    public void setInstances(ArrayList<ClassInstance> instances) {
+        this.instances = instances;
+    }
+
+    public void addInstance(ClassInstance instance) {
+        this.instances.add(instance);
     }
 
     public ArrayList<EnumStructure> getEnumerations() {
@@ -43,16 +49,5 @@ public class ClassDiagram implements Serializable {
         this.enumerations.add(enumeration);
     }
 
-    public ArrayList<ClassRelation> getRelationships() {
-        return relationships;
-    }
-
-    public void setRelationships(ArrayList<ClassRelation> relationships) {
-        this.relationships = relationships;
-    }
-
-    public void addRelationship(ClassRelation relationship) {
-        this.relationships.add(relationship);
-    }
 
 }

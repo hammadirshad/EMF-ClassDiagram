@@ -6,24 +6,16 @@ import java.util.List;
 public class UseCaseDiagram {
 
     private String systemName;
-    private List<String> actors;
-    private List<String> usecases;
-    private List<String> associations;
-    private int actorsCount;
-    private int usecasesCount;
-    private int includesCount;
-    private int extendsCount;
+    private List<String> actors = new ArrayList<>();
+    private List<String> usecases = new ArrayList<>();
+    private List<String> associations = new ArrayList<>();
+    private int actorsCount = 0;
+    private int usecasesCount = 0;
+    private int includesCount = 0;
+    private int extendsCount = 0;
 
     public UseCaseDiagram() {
-        systemName = null;
-        actors = new ArrayList<>();
-        usecases = new ArrayList<>();
-        associations = new ArrayList<>();
 
-        actorsCount = 0;
-        usecasesCount = 0;
-        includesCount = 0;
-        extendsCount = 0;
     }
 
     public UseCaseDiagram(String systemName, List<String> actors,

@@ -3,11 +3,13 @@ package org.eclipse.emf.example.models._package;
 import org.eclipse.emf.example.models._class.ClassStructure;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PackageDiagram {
     private String packageName;
-    private ArrayList<ClassStructure> classes = new ArrayList<ClassStructure>();
-    private ArrayList<String> imports = new ArrayList<String>();
+    private List<ClassStructure> classes = new ArrayList<>();
+    private List<String> imports = new ArrayList<>();
+
 
     public String getPackageName() {
         return packageName;
@@ -17,23 +19,23 @@ public class PackageDiagram {
         this.packageName = packageName;
     }
 
-    public ArrayList<ClassStructure> getClasses() {
-        return classes;
-    }
-
-    public void setClasses(ArrayList<ClassStructure> classes) {
-        this.classes = classes;
-    }
-
     public void addClass(ClassStructure _class) {
         this.classes.add(_class);
     }
 
-    public ArrayList<String> getImports() {
+    public List<ClassStructure> getClasses() {
+        return classes;
+    }
+
+    public void setClasses(List<ClassStructure> classes) {
+        this.classes = classes;
+    }
+
+    public List<String> getImports() {
         return imports;
     }
 
-    public void setImports(ArrayList<String> imports) {
+    public void setImports(List<String> imports) {
         this.imports = imports;
     }
 

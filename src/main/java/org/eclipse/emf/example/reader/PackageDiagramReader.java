@@ -16,7 +16,7 @@ public class PackageDiagramReader implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public List<PackageDiagram> getRefModelDetails(Package _package) {
+    public static List<PackageDiagram> getRefModelDetails(Package _package) {
         List<PackageDiagram> packages = new ArrayList<>();
         EList<PackageableElement> packageableElements;
 
