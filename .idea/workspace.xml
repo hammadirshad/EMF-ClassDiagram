@@ -2,23 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="433f808c-15e3-46fe-bbf1-7513bb8ee09c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_package/PackageStructure.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/UMLProfileReader.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_profile/ExtensionStructure.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_profile/ProfileDiagram.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_profile/StereotypeStructure.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/ClassStructureReader.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/EnumerationReader.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/InstanceReader.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/PackageReader.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/ActivityDiagramReader.java" afterPath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/diagram/ActivityDiagramReader.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/ClassDiagramReader.java" afterPath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/diagram/ClassDiagramReader.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/PackageDiagramReader.java" afterPath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/diagram/PackageDiagramReader.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/SequenceDiagramReader.java" afterPath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/diagram/SequenceDiagramReader.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/StateMachineReader.java" afterPath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/diagram/StateMachineReader.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/UMLProfileReader.java" afterPath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/diagram/UMLProfileReader.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/UseCaseDiagramReader.java" afterPath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/diagram/UseCaseDiagramReader.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/driver/Driver.java" afterPath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/driver/Driver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_activity/ActivityDiagram.java" afterPath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_activity/ActivityDiagram.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_class/ClassDiagram.java" afterPath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_class/ClassDiagram.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_class/ClassInstance.java" afterPath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_class/ClassInstance.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_class/ClassStructure.java" afterPath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_class/ClassStructure.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_package/PackageDiagram.java" afterPath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_package/PackageDiagram.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_sequence/SequenceDiagram.java" afterPath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_sequence/SequenceDiagram.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_usecase/UseCaseDiagram.java" afterPath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_usecase/UseCaseDiagram.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/ActivityDiagramReader.java" afterPath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/ActivityDiagramReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/ClassDiagramReader.java" afterPath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/ClassDiagramReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/PackageDiagramReader.java" afterPath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/PackageDiagramReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/SequenceDiagramReader.java" afterPath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/SequenceDiagramReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/UseCaseDiagramReader.java" afterPath="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/UseCaseDiagramReader.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,23 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UMLProfileReader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/UMLProfileReader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Driver.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Driver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/driver/Driver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="793">
+              <caret line="126" column="1" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="126" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -54,14 +43,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClassDiagramReader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/ClassDiagramReader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="30" column="86" lean-forward="true" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="86" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="1920">
+                <caret line="128" column="1" lean-forward="false" selection-start-line="128" selection-start-column="1" selection-end-line="128" selection-end-column="1" />
+                <folding>
+                  <marker date="1510582400422" expanded="true" signature="70:338" ph="..." />
+                  <marker date="1510582400422" expanded="true" signature="70:460" ph="..." />
+                  <marker date="1510582400422" expanded="true" signature="70:1036" ph="..." />
+                  <marker date="1510582400422" expanded="true" signature="1120:1444" ph="{...}" />
+                  <marker date="1510582400422" expanded="true" signature="1519:2096" ph="{...}" />
+                  <marker date="1510582400422" expanded="true" signature="2174:2464" ph="{...}" />
+                  <marker date="1510582400422" expanded="true" signature="2543:2942" ph="{...}" />
+                  <marker date="1510582400422" expanded="true" signature="3021:3402" ph="{...}" />
+                  <marker date="1510582400422" expanded="true" signature="3478:3770" ph="{...}" />
+                  <marker date="1510582400422" expanded="true" signature="3847:4239" ph="{...}" />
+                  <marker date="1510582400422" expanded="true" signature="4310:5127" ph="{...}" />
+                </folding>
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -82,6 +84,9 @@
       <find>SM</find>
       <find>PD</find>
       <find>UD</find>
+      <find>Camera</find>
+      <find>FlashState</find>
+      <find>ApplicationActivity</find>
     </findStrings>
     <replaceStrings>
       <replace>SequenceDiagram</replace>
@@ -127,8 +132,6 @@
         <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/UsecaseDiagramReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/StateMachineReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_usecase/UseCase.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/loader/ModelLoader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_class/ClassStructure.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_class/ClassInstance.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_package/PackageStructure.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_class/ClassDiagram.java" />
@@ -136,14 +139,30 @@
         <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/UseCaseDiagramReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_usecase/UseCaseDiagram.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_sequence/SequenceDiagram.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/SequenceDiagramReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_activity/ActivityDiagram.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_package/PackageDiagram.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/ActivityDiagramReader.java" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/ClassDiagramReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/UMLProfileReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/ClassDiagramReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/SequenceDiagramReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/ClassReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/diagram/UseCaseDiagramReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/EnumerationReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/InstanceReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/PackageReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/diagram/ClassDiagramReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_package/PackageDiagram.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/diagram/PackageDiagramReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/diagram/SequenceDiagramReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_class/ClassStructure.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/StereotypeStructure.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/loader/ModelLoader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_profile/StereotypeStructure.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/ClassStructureReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_profile/ProfileDiagram.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_profile/ExtensionStructure.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/diagram/UMLProfileReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/driver/Driver.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -182,8 +201,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -233,7 +250,26 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="loader" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="emf-uml-model-reader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="emf-uml-model-reader" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="emf-uml-model-reader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="emf-uml-model-reader" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="_activity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="emf-uml-model-reader" type="b2602c69:ProjectViewProjectNode" />
@@ -253,7 +289,57 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="example" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="_enum" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="emf-uml-model-reader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="emf-uml-model-reader" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
               <item name="_package" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="emf-uml-model-reader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="emf-uml-model-reader" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="_profile" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="emf-uml-model-reader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="emf-uml-model-reader" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="_sequence" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="emf-uml-model-reader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="emf-uml-model-reader" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="_statemachine" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="emf-uml-model-reader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="emf-uml-model-reader" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="_usecase" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="emf-uml-model-reader" type="b2602c69:ProjectViewProjectNode" />
@@ -264,12 +350,24 @@
               <item name="example" type="462c0819:PsiDirectoryNode" />
               <item name="reader" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="emf-uml-model-reader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="emf-uml-model-reader" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="reader" type="462c0819:PsiDirectoryNode" />
+              <item name="diagram" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -423,7 +521,8 @@
       <option name="presentableId" value="Default" />
       <updated>1510143213931</updated>
       <workItem from="1510143215144" duration="4405000" />
-      <workItem from="1510308159356" duration="7885000" />
+      <workItem from="1510308159356" duration="7914000" />
+      <workItem from="1510569443769" duration="9195000" />
     </task>
     <task id="LOCAL-00001" summary="Project Update">
       <created>1510147511012</created>
@@ -432,11 +531,18 @@
       <option name="project" value="LOCAL" />
       <updated>1510147511012</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Project Update">
+      <created>1510319833627</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1510319833628</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12290000" />
+    <option name="totallyTimeSpent" value="21514000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2516" y="-201" width="2504" height="1388" extended-state="0" />
@@ -451,12 +557,12 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32869297" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31322506" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25182778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24979691" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14216085" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24979691" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -488,146 +594,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_sequence/SequenceGate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Volumes/HAMMAD/workspace/UMLCE/src/com/fyp/umce/dataobject/SD.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="104" column="5" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="104" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Volumes/HAMMAD/workspace/untitled/src/test/java/com/rule/AppTest.java" />
-    <entry file="file:///Volumes/HAMMAD/workspace/untitled/src/main/java/driver/Main.java" />
-    <entry file="file:///Volumes/HAMMAD/workspace/untitled/src/main/java/com/ruleengine/util/TrimString.java" />
-    <entry file="file:///Volumes/HAMMAD/workspace/untitled/src/main/java/com/ruleengine/operations/Operations.java" />
-    <entry file="file:///Volumes/HAMMAD/workspace/untitled/src/main/java/com/ruleengine/rule/evaluator/RuleEvaluator.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_class/OperationParameter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="31" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_class/ClassAttribute.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_class/ClassOperation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="607">
-          <caret line="99" column="36" lean-forward="true" selection-start-line="99" selection-start-column="36" selection-end-line="99" selection-end-column="36" />
-          <folding>
-            <element signature="e#2393#2394#0" expanded="true" />
-            <element signature="e#2437#2438#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/util/Keywords.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="49" lean-forward="false" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_class/OperationReturn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="34" column="41" lean-forward="false" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
-          <folding>
-            <element signature="e#1415#1416#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/PackageDiagramController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_statemachine/TransitionDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="e#572#573#0" expanded="true" />
-            <element signature="e#599#600#0" expanded="true" />
-            <element signature="e#639#640#0" expanded="true" />
-            <element signature="e#671#672#0" expanded="true" />
-            <element signature="e#702#703#0" expanded="true" />
-            <element signature="e#729#730#0" expanded="true" />
-            <element signature="e#769#770#0" expanded="true" />
-            <element signature="e#801#802#0" expanded="true" />
-            <element signature="e#834#835#0" expanded="true" />
-            <element signature="e#863#864#0" expanded="true" />
-            <element signature="e#907#908#0" expanded="true" />
-            <element signature="e#943#944#0" expanded="true" />
-            <element signature="e#974#975#0" expanded="true" />
-            <element signature="e#1002#1003#0" expanded="true" />
-            <element signature="e#1043#1044#0" expanded="true" />
-            <element signature="e#1077#1078#0" expanded="true" />
-            <element signature="e#1112#1113#0" expanded="true" />
-            <element signature="e#1142#1143#0" expanded="true" />
-            <element signature="e#1189#1190#0" expanded="true" />
-            <element signature="e#1227#1228#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_statemachine/Trigger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_statemachine/StateDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_statemachine/Effect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_statemachine/Guard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Volumes/HAMMAD/workspace/UMLCE/src/com/fyp/umce/dataobject/SM.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="29" column="0" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="29" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_statemachine/StateMachine.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -688,7 +654,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="27266" column="15" lean-forward="false" selection-start-line="27266" selection-start-column="15" selection-end-line="27266" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -696,15 +661,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/loader/ModelLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="152" column="0" lean-forward="true" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -716,35 +672,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/uml2/uml/5.0.0-v20140602-0749/uml-5.0.0-v20140602-0749-sources.jar!/org/eclipse/uml2/uml/Profile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="48" column="41" lean-forward="true" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_class/ClassRelation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_class/ClassStructure.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/uml2/uml/5.0.0-v20140602-0749/uml-5.0.0-v20140602-0749-sources.jar!/org/eclipse/uml2/uml/InstanceSpecification.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="46" column="17" lean-forward="false" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -753,54 +684,9 @@
         <state relative-caret-position="330">
           <caret line="33" column="46" lean-forward="false" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
           <folding>
-            <element signature="e#779#780#0" expanded="true" />
-            <element signature="e#839#840#0" expanded="true" />
-            <element signature="e#877#878#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_package/PackageStructure.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="30" lean-forward="false" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#621#622#0" expanded="true" />
-            <element signature="e#648#649#0" expanded="true" />
-            <element signature="e#688#689#0" expanded="true" />
-            <element signature="e#720#721#0" expanded="true" />
-            <element signature="e#768#769#0" expanded="true" />
-            <element signature="e#798#799#0" expanded="true" />
-            <element signature="e#858#859#0" expanded="true" />
-            <element signature="e#896#897#0" expanded="true" />
-            <element signature="e#945#946#0" expanded="true" />
-            <element signature="e#977#978#0" expanded="true" />
-            <element signature="e#1040#1041#0" expanded="true" />
-            <element signature="e#1082#1083#0" expanded="true" />
-            <element signature="e#1127#1128#0" expanded="true" />
-            <element signature="e#1155#1156#0" expanded="true" />
-            <element signature="e#1210#1211#0" expanded="true" />
-            <element signature="e#1244#1245#0" expanded="true" />
-            <element signature="e#1295#1296#0" expanded="true" />
-            <element signature="e#1326#1327#0" expanded="true" />
-            <element signature="e#1390#1391#0" expanded="true" />
-            <element signature="e#1430#1431#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_class/ClassDiagram.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="29" column="5" lean-forward="false" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-          <folding>
-            <element signature="e#808#809#0" expanded="true" />
-            <element signature="e#840#841#0" expanded="true" />
-            <element signature="e#908#909#0" expanded="true" />
-            <element signature="e#950#951#0" expanded="true" />
-            <element signature="e#1005#1006#0" expanded="true" />
-            <element signature="e#1049#1050#0" expanded="true" />
+            <element signature="e#779#780#0" expanded="false" />
+            <element signature="e#839#840#0" expanded="false" />
+            <element signature="e#877#878#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -813,12 +699,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/StateMachineReader.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_activity/ActivityDiagram.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="12" lean-forward="false" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
+        <state relative-caret-position="225">
+          <caret line="15" column="37" lean-forward="false" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#559#560#0" expanded="false" />
+            <element signature="e#615#616#0" expanded="false" />
+            <element signature="e#663#664#0" expanded="false" />
+            <element signature="e#705#706#0" expanded="false" />
+            <element signature="e#737#738#0" expanded="false" />
+            <element signature="e#793#794#0" expanded="false" />
+            <element signature="e#835#836#0" expanded="false" />
+            <element signature="e#874#875#0" expanded="false" />
+            <element signature="e#903#904#0" expanded="false" />
+            <element signature="e#953#954#0" expanded="false" />
+            <element signature="e#989#990#0" expanded="false" />
+            <element signature="e#1027#1028#0" expanded="false" />
+            <element signature="e#1055#1056#0" expanded="false" />
+            <element signature="e#1103#1104#0" expanded="false" />
+            <element signature="e#1137#1138#0" expanded="false" />
+            <element signature="e#1175#1176#0" expanded="false" />
+            <element signature="e#1203#1204#0" expanded="false" />
+            <element signature="e#1251#1252#0" expanded="false" />
+            <element signature="e#1285#1286#0" expanded="false" />
+            <element signature="e#1331#1332#0" expanded="false" />
+            <element signature="e#1367#1368#0" expanded="false" />
+            <element signature="e#1431#1432#0" expanded="false" />
+            <element signature="e#1481#1482#0" expanded="false" />
+            <element signature="e#1519#1520#0" expanded="false" />
+            <element signature="e#1547#1548#0" expanded="false" />
+            <element signature="e#1595#1596#0" expanded="false" />
+            <element signature="e#1629#1630#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -829,167 +742,325 @@
           <caret line="13" column="34" lean-forward="true" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1131#1132#0" expanded="true" />
-            <element signature="e#1164#1165#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_sequence/SequenceDiagram.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="50" lean-forward="false" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
+        <state relative-caret-position="105">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#736#737#0" expanded="true" />
-            <element signature="e#802#803#0" expanded="true" />
-            <element signature="e#844#845#0" expanded="true" />
-            <element signature="e#894#895#0" expanded="true" />
-            <element signature="e#925#926#0" expanded="true" />
-            <element signature="e#988#989#0" expanded="true" />
-            <element signature="e#1028#1029#0" expanded="true" />
-            <element signature="e#1076#1077#0" expanded="true" />
-            <element signature="e#1106#1107#0" expanded="true" />
-            <element signature="e#1166#1167#0" expanded="true" />
-            <element signature="e#1204#1205#0" expanded="true" />
-            <element signature="e#1258#1259#0" expanded="true" />
-            <element signature="e#1291#1292#0" expanded="true" />
-            <element signature="e#1360#1361#0" expanded="true" />
-            <element signature="e#1404#1405#0" expanded="true" />
-            <element signature="e#1448#1449#0" expanded="true" />
-            <element signature="e#1476#1477#0" expanded="true" />
-            <element signature="e#1530#1531#0" expanded="true" />
-            <element signature="e#1564#1565#0" expanded="true" />
-            <element signature="e#1616#1617#0" expanded="true" />
-            <element signature="e#1648#1649#0" expanded="true" />
-            <element signature="e#1714#1715#0" expanded="true" />
-            <element signature="e#1756#1757#0" expanded="true" />
-            <element signature="e#1816#1817#0" expanded="true" />
-            <element signature="e#1848#1849#0" expanded="true" />
-            <element signature="e#1922#1923#0" expanded="true" />
-            <element signature="e#1964#1965#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/SequenceDiagramReader.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/diagram/ActivityDiagramReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-667">
-          <caret line="132" column="33" lean-forward="false" selection-start-line="132" selection-start-column="33" selection-end-line="132" selection-end-column="33" />
+        <state relative-caret-position="60">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/diagram/StateMachineReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_activity/ActivityDiagram.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/diagram/UseCaseDiagramReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="37" lean-forward="false" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+        <state relative-caret-position="705">
+          <caret line="59" column="51" lean-forward="true" selection-start-line="59" selection-start-column="51" selection-end-line="59" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/InstanceReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="10" lean-forward="false" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#559#560#0" expanded="true" />
-            <element signature="e#615#616#0" expanded="true" />
-            <element signature="e#663#664#0" expanded="true" />
-            <element signature="e#705#706#0" expanded="true" />
-            <element signature="e#737#738#0" expanded="true" />
-            <element signature="e#793#794#0" expanded="true" />
-            <element signature="e#835#836#0" expanded="true" />
-            <element signature="e#874#875#0" expanded="true" />
-            <element signature="e#903#904#0" expanded="true" />
-            <element signature="e#953#954#0" expanded="true" />
-            <element signature="e#989#990#0" expanded="true" />
-            <element signature="e#1027#1028#0" expanded="true" />
-            <element signature="e#1055#1056#0" expanded="true" />
-            <element signature="e#1103#1104#0" expanded="true" />
-            <element signature="e#1137#1138#0" expanded="true" />
-            <element signature="e#1175#1176#0" expanded="true" />
-            <element signature="e#1203#1204#0" expanded="true" />
-            <element signature="e#1251#1252#0" expanded="true" />
-            <element signature="e#1285#1286#0" expanded="true" />
-            <element signature="e#1331#1332#0" expanded="true" />
-            <element signature="e#1367#1368#0" expanded="true" />
-            <element signature="e#1431#1432#0" expanded="true" />
-            <element signature="e#1481#1482#0" expanded="true" />
-            <element signature="e#1519#1520#0" expanded="true" />
-            <element signature="e#1547#1548#0" expanded="true" />
-            <element signature="e#1595#1596#0" expanded="true" />
-            <element signature="e#1629#1630#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/EnumerationReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/PackageReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/diagram/ClassDiagramReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="86" lean-forward="true" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="86" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/diagram/PackageDiagramReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/diagram/SequenceDiagramReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="766">
+          <caret line="230" column="43" lean-forward="true" selection-start-line="230" selection-start-column="43" selection-end-line="230" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_class/ClassStructure.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="9" selection-end-column="24" />
+          <folding>
+            <element signature="e#2963#2964#0" expanded="true" />
+            <element signature="e#3007#3008#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Volumes/HAMMAD/workspace/Maple/src/com/questlab/maple/dataobjects/JavaCodeStructure.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="29" column="132" lean-forward="false" selection-start-line="29" selection-start-column="132" selection-end-line="29" selection-end-column="132" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Volumes/HAMMAD/workspace/Maple/src/com/questlab/maple/dataobjects/HierarchicalStructure.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1192">
+          <caret line="26" column="4" lean-forward="true" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Volumes/HAMMAD/workspace/Maple/src/com/questlab/maple/merger/CodeMerger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Volumes/HAMMAD/workspace/Maple/src/com/questlab/maple/generator/CodeFileWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="213" column="22" lean-forward="true" selection-start-line="213" selection-start-column="22" selection-end-line="213" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/emf/org.eclipse.emf.ecore/2.12.0/org.eclipse.emf.ecore-2.12.0.jar!/org/eclipse/emf/ecore/util/EcoreUtil.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="177" column="30" lean-forward="false" selection-start-line="177" selection-start-column="30" selection-end-line="177" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/emf/org.eclipse.emf.ecore/2.12.0/org.eclipse.emf.ecore-2.12.0-sources.jar!/org/eclipse/emf/ecore/util/EcoreUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="265" column="21" lean-forward="false" selection-start-line="265" selection-start-column="21" selection-end-line="265" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/emf/org.eclipse.emf.ecore/2.12.0/org.eclipse.emf.ecore-2.12.0-sources.jar!/org/eclipse/emf/ecore/resource/ResourceSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="176" column="11" lean-forward="false" selection-start-line="176" selection-start-column="11" selection-end-line="176" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Volumes/HAMMAD/workspace/Maple/src/com/questlab/maple/driver/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/loader/ModelLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1365">
+          <caret line="119" column="0" lean-forward="true" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/uml2/uml/5.0.0-v20140602-0749/uml-5.0.0-v20140602-0749-sources.jar!/org/eclipse/uml2/uml/Stereotype.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="269" column="38" lean-forward="false" selection-start-line="269" selection-start-column="38" selection-end-line="269" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_class/ClassDiagram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="70" />
+          <folding>
+            <element signature="e#808#809#0" expanded="true" />
+            <element signature="e#840#841#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_profile/StereotypeStructure.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#343#344#0" expanded="true" />
+            <element signature="e#379#380#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/uml2/uml/5.0.0-v20140602-0749/uml-5.0.0-v20140602-0749-sources.jar!/org/eclipse/uml2/uml/Profile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="47" column="24" lean-forward="false" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_package/PackageDiagram.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="42" column="32" lean-forward="false" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+        <state relative-caret-position="90">
+          <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#985#986#0" expanded="true" />
-            <element signature="e#1026#1027#0" expanded="true" />
+            <element signature="e#179#180#0" expanded="true" />
+            <element signature="e#218#219#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/ActivityDiagramReader.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_package/PackageStructure.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="35" column="52" lean-forward="false" selection-start-line="35" selection-start-column="52" selection-end-line="35" selection-end-column="52" />
+        <state relative-caret-position="60">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="1380">
-            <caret line="92" column="1" lean-forward="false" selection-start-line="92" selection-start-column="1" selection-end-line="92" selection-end-column="1" />
-            <folding>
-              <marker date="1510319000159" expanded="true" signature="70:338" ph="..." />
-              <marker date="1510319000159" expanded="true" signature="70:830" ph="..." />
-              <marker date="1510319000159" expanded="true" signature="914:1208" ph="{...}" />
-              <marker date="1510319000159" expanded="true" signature="1283:1790" ph="{...}" />
-              <marker date="1510319000159" expanded="true" signature="1868:2175" ph="{...}" />
-              <marker date="1510319000159" expanded="true" signature="2254:2588" ph="{...}" />
-              <marker date="1510319000159" expanded="true" signature="2667:2987" ph="{...}" />
-              <marker date="1510319000159" expanded="true" signature="3063:3355" ph="{...}" />
-              <marker date="1510319000159" expanded="true" signature="3432:3760" ph="{...}" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/UseCaseDiagramReader.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/uml2/uml/5.0.0-v20140602-0749/uml-5.0.0-v20140602-0749-sources.jar!/org/eclipse/uml2/uml/Extension.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-39">
-          <caret line="25" column="25" lean-forward="false" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="25" />
+        <state relative-caret-position="286">
+          <caret line="41" column="17" lean-forward="false" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/PackageDiagramReader.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/uml2/uml/5.0.0-v20140602-0749/uml-5.0.0-v20140602-0749-sources.jar!/org/eclipse/uml2/uml/Relationship.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
-          <caret line="36" column="32" lean-forward="false" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="32" />
+          <caret line="39" column="17" lean-forward="false" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/ClassDiagramReader.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/uml2/uml/5.0.0-v20140602-0749/uml-5.0.0-v20140602-0749-sources.jar!/org/eclipse/uml2/uml/Association.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="30" column="86" lean-forward="true" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="86" />
+        <state relative-caret-position="-2174">
+          <caret line="48" column="17" lean-forward="false" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_class/ClassRelation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/ClassStructureReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="78" column="75" lean-forward="false" selection-start-line="78" selection-start-column="75" selection-end-line="78" selection-end-column="75" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/UMLProfileReader.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_class/ClassAttribute.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+        <state relative-caret-position="30">
+          <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_profile/ProfileDiagram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="40" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1038#1039#0" expanded="true" />
+            <element signature="e#1071#1072#0" expanded="true" />
+            <element signature="e#1146#1147#0" expanded="true" />
+            <element signature="e#1190#1191#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/models/_profile/ExtensionStructure.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/reader/diagram/UMLProfileReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="52" column="87" lean-forward="false" selection-start-line="49" selection-start-column="16" selection-end-line="52" selection-end-column="87" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -998,11 +1069,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/eclipse/emf/example/driver/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state relative-caret-position="793">
+          <caret line="126" column="1" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="126" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="1920">
+            <caret line="128" column="1" lean-forward="false" selection-start-line="128" selection-start-column="1" selection-end-line="128" selection-end-column="1" />
+            <folding>
+              <marker date="1510582400422" expanded="true" signature="70:338" ph="..." />
+              <marker date="1510582400422" expanded="true" signature="70:460" ph="..." />
+              <marker date="1510582400422" expanded="true" signature="70:1036" ph="..." />
+              <marker date="1510582400422" expanded="true" signature="1120:1444" ph="{...}" />
+              <marker date="1510582400422" expanded="true" signature="1519:2096" ph="{...}" />
+              <marker date="1510582400422" expanded="true" signature="2174:2464" ph="{...}" />
+              <marker date="1510582400422" expanded="true" signature="2543:2942" ph="{...}" />
+              <marker date="1510582400422" expanded="true" signature="3021:3402" ph="{...}" />
+              <marker date="1510582400422" expanded="true" signature="3478:3770" ph="{...}" />
+              <marker date="1510582400422" expanded="true" signature="3847:4239" ph="{...}" />
+              <marker date="1510582400422" expanded="true" signature="4310:5127" ph="{...}" />
+            </folding>
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

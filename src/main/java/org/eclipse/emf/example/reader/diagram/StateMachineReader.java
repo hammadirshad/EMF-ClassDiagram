@@ -1,4 +1,4 @@
-package org.eclipse.emf.example.reader;
+package org.eclipse.emf.example.reader.diagram;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.example.models._statemachine.Effect;

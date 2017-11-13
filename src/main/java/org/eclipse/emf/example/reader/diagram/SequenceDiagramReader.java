@@ -1,9 +1,10 @@
-package org.eclipse.emf.example.reader;
+package org.eclipse.emf.example.reader.diagram;
 
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.example.models._class.*;
+import org.eclipse.emf.example.models._class.ClassStructure;
 import org.eclipse.emf.example.models._sequence.*;
+import org.eclipse.emf.example.reader.ClassStructureReader;
 import org.eclipse.emf.example.util.Keywords;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.*;
@@ -12,7 +13,6 @@ import org.eclipse.uml2.uml.internal.impl.*;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class SequenceDiagramReader implements Serializable {
@@ -34,12 +34,7 @@ public class SequenceDiagramReader implements Serializable {
 
             if (element.eClass() == UMLPackage.Literals.CLASS) {
                 Class umlClass = (Class) element;
-                ClassStructure structure = new ClassStructure();
-                structure.setName(umlClass.getName());
-                structure.setOperations(readOperations(umlClass
-                        .getOperations()));
-                structure.setAttributes(readAttributes(umlClass
-                        .getAllAttributes()));
+                ClassStructure structure = ClassStructureReader.readClass(umlClass, null);
                 sequenceDiagram.getClasses().add(structure);
             }
             if (element.eClass() == UMLPackage.Literals.COLLABORATION) {
@@ -52,16 +47,10 @@ public class SequenceDiagramReader implements Serializable {
                 }
 
                 if (collaborationImpl.getOwnedBehaviors() != null) {
-                    for (Element element2 : collaborationImpl
-                            .getOwnedBehaviors()) {
+                    for (Element element2 : collaborationImpl.getOwnedBehaviors()) {
                         if (element2.eClass() == UMLPackage.Literals.INTERACTION) {
                             InteractionImpl interactionImpl = (InteractionImpl) element2;
-                            SequenceDiagram read = interactionReader(interactionImpl);
-                            sequenceDiagram.setLifelines(read.getLifelines());
-                            sequenceDiagram.setMessages(read.getMessages());
-                            sequenceDiagram.setGates(read.getGates());
-                            sequenceDiagram.setBehaviors(read.getBehaviors());
-                            sequenceDiagram.setFragments(read.getFragments());
+                            interactionReader(interactionImpl, sequenceDiagram);
                         }
                     }
                 }
@@ -69,12 +58,7 @@ public class SequenceDiagramReader implements Serializable {
 
             if (element.eClass() == UMLPackage.Literals.INTERACTION && element instanceof InteractionImpl) {
                 InteractionImpl interactionImpl = (InteractionImpl) element;
-                SequenceDiagram read = interactionReader(interactionImpl);
-                sequenceDiagram.setLifelines(read.getLifelines());
-                sequenceDiagram.setMessages(read.getMessages());
-                sequenceDiagram.setGates(read.getGates());
-                sequenceDiagram.setBehaviors(read.getBehaviors());
-                sequenceDiagram.setFragments(read.getFragments());
+                interactionReader(interactionImpl, sequenceDiagram);
             }
 
         }
@@ -88,19 +72,18 @@ public class SequenceDiagramReader implements Serializable {
      * gates,MessageOccurrence,CombinedFragment,BehaviorExecution
      *
      * @param interactionImpl InteractionImpl
-     * @return Class object that have list of messages, lifeLines,Formal
-     * gates,MessageOccurrence,CombinedFragment,BehaviorExecution
+     *                        gates,MessageOccurrence,CombinedFragment,BehaviorExecution
      */
 
-    private static SequenceDiagram interactionReader(InteractionImpl interactionImpl) {
-        SequenceDiagram sd = new SequenceDiagram();
+    private static void interactionReader(InteractionImpl interactionImpl, SequenceDiagram sequenceDiagram) {
+
 
         // reading behaviors
         for (InteractionFragment interactionFragment : interactionImpl
                 .getFragments()) {
             if (interactionFragment instanceof BehaviorExecutionSpecificationImpl) {
                 BehaviorExecutionSpecificationImpl fragment = (BehaviorExecutionSpecificationImpl) interactionFragment;
-                sd.getBehaviors().add(behaviorReader(fragment));
+                sequenceDiagram.getBehaviors().add(behaviorReader(fragment));
             }
         }
 
@@ -109,31 +92,29 @@ public class SequenceDiagramReader implements Serializable {
                 .getFragments()) {
             if (interactionFragment instanceof CombinedFragment) {
                 CombinedFragment combinedFragment = (CombinedFragment) interactionFragment;
-                sd.getFragments().add(fragmentReader(combinedFragment));
+                sequenceDiagram.getFragments().add(fragmentReader(combinedFragment));
             }
         }
 
         // Adding Behavior Calls
-        for (SequenceBehavior behavior : sd.getBehaviors()) {
+        for (SequenceBehavior behavior : sequenceDiagram.getBehaviors()) {
             addBehaviorDetail(behavior, interactionImpl.getFragments());
         }
 
         // FormalGates
         for (Gate gate : interactionImpl.getFormalGates()) {
-            sd.getGates().add(gateReader(gate));
+            sequenceDiagram.getGates().add(gateReader(gate));
         }
 
         // LifLines
         for (Lifeline lifeline : interactionImpl.getLifelines()) {
-            sd.getLifelines().add(lifelineReader(lifeline));
+            sequenceDiagram.getLifelines().add(lifelineReader(lifeline));
         }
 
         // Messages
         for (Message message : interactionImpl.getMessages()) {
-            sd.getMessages().add(messageReader(message));
+            sequenceDiagram.getMessages().add(messageReader(message));
         }
-
-        return sd;
 
     }
 
@@ -379,82 +360,5 @@ public class SequenceDiagramReader implements Serializable {
         return sequenceMessage;
     }
 
-    private static List<ClassOperation> readOperations(EList<Operation> eList) {
-        ArrayList<String> opps = new ArrayList<>();
-        ArrayList<ClassOperation> structure = new ArrayList<>();
-        if (!eList.isEmpty()) {
-            for (Operation oper : eList) {
 
-                ClassOperation operation = new ClassOperation();
-                operation.setName(oper.getName());
-                operation.setVisibility(oper.getVisibility()
-                        .toString());
-
-                EList<Parameter> parameters = oper.getOwnedParameters();
-
-                if (!parameters.isEmpty()) {
-                    for (Parameter parameter : parameters) {
-                        OperationParameter operationParameter = new OperationParameter();
-
-						/*
-                         * System.out.println(parameter.getName()+"  "+(
-						 * parameter.getDirection() == null?"Return":"void"
-						 * )+" "+parameter.getDirection());
-						 */
-
-                        operationParameter.setDirection(parameter.getDirection().toString());
-                        if (parameter.getType() instanceof PrimitiveTypeImpl) {
-                            operationParameter.setName(parameter.getName());
-                            PrimitiveTypeImpl prim = (PrimitiveTypeImpl) (parameter
-                                    .getType());
-                            operationParameter.setType(prim.eProxyURI().fragment());
-
-                        } else if (parameter.getType() instanceof org.eclipse.uml2.uml.internal.impl.InterfaceImpl) {
-
-                            operationParameter.setName(parameter.getName());
-                            operationParameter.setType("List<E>");
-                        }
-                        if (parameter.getDirection() == null) {
-                            operation.setReturnType(new OperationReturn(operationParameter.getType()));
-                        } else {
-                            operation.setReturnType(new OperationReturn("void"));
-                        }
-                        operation.getParameters().add(operationParameter);
-                    }
-                }
-
-                if (!opps.contains(operation.getName())) {
-                    opps.add(operation.getName());
-                    structure.add(operation);
-                }
-            }
-        }
-        return structure;
-    }
-
-    private static List<ClassAttribute> readAttributes(EList<Property> attributes) {
-        List<ClassAttribute> structure = new ArrayList<>();
-        if (!attributes.isEmpty()) {
-            for (Property attribute : attributes) {
-                ClassAttribute classAttribute = new ClassAttribute();
-                if (attribute.getType() instanceof PrimitiveTypeImpl) {
-                    classAttribute.setName(attribute.getName());
-                    classAttribute.setVisibility(attribute.getVisibility()
-                            .toString());
-                    PrimitiveTypeImpl prim = (PrimitiveTypeImpl) (attribute
-                            .getType());
-                    classAttribute.setType(prim.eProxyURI().fragment());
-                    structure.add(classAttribute);
-                } else if (attribute.getType() instanceof org.eclipse.uml2.uml.internal.impl.InterfaceImpl) {
-                    /*
-                     * InterfaceImpl prim = (InterfaceImpl) (attribute
-					 * .getType()); classAttribute.setType(prim.eProxyURI().query());
-					 * structure.getAttributes().add(classAttribute);
-					 */
-                }
-
-            }
-        }
-        return structure;
-    }
 }
