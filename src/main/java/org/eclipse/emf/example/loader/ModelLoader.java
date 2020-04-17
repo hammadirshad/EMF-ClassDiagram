@@ -51,7 +51,6 @@ public class ModelLoader {
 
         extensionFactoryMap.put(UML22UMLResource.FILE_EXTENSION, UML22UMLResource.Factory.INSTANCE);
         extensionFactoryMap.put(UMLResource.FILE_EXTENSION, UML22UMLResource.Factory.INSTANCE);
-        extensionFactoryMap.put(UMLResource.FILE_EXTENSION, UML22UMLResource.Factory.INSTANCE);
 
         extensionFactoryMap.put("xml", UMLResource.Factory.INSTANCE);
 
